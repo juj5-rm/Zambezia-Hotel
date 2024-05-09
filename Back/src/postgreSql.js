@@ -1,4 +1,4 @@
-import { pool } from "./dataBase/connectionPostgreSql.js";
+import { pool } from "../dataBase/connectionPostgreSql.js";
 
 const getClients = async () => {
   try {
