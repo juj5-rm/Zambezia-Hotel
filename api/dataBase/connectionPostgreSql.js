@@ -7,6 +7,6 @@ export const pool = new pg.Pool({
   user: "avengers",
   password: "fJRx4qphyA5ruNHCFR4piJyBQz4SuDel",
   ssl: {
-    rejectUnauthorized: false, 
+    rejectUnauthorized: false,
   },
 });

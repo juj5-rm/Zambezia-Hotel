@@ -1,9 +1,14 @@
 import express from "express";
+import cors from "cors";
 import { pool } from "../dataBase/connectionPostgreSql.js";
 
 const app = express();
 const PORT = 3000;
 
+// Habilita CORS para todas las solicitudes
+app.use(cors());
+
+// Define tu ruta para manejar las solicitudes GET
 app.get("/", async (req, res) => {
   try {
     const result = await pool.query(
@@ -18,6 +23,7 @@ app.get("/", async (req, res) => {
   }
 });
 
+// Inicia el servidor
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

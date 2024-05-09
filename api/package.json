@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "pg": "^8.11.5"
   },
-  "name": "back",
+  "name": "api",
   "version": "1.0.0",
   "main": "postgreSql.js",
-  "devDependencies": {},
   "scripts": {
     "dev": "nodemon ./src/postgreSql.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/juj5-rm/Final-proyect-DB"
+    "url": "git+https://github.com/juj5-rm/Final-proyect-DB.git"
   },
-  "description": ""
+  "description": "api para el proyecto final de base de datos",
+  "bugs": {
+    "url": "https://github.com/juj5-rm/Final-proyect-DB/issues"
+  },
+  "homepage": "https://github.com/juj5-rm/Final-proyect-DB#readme"
 }
