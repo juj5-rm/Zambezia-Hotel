@@ -1,16 +1,23 @@
+import express from "express";
 import { pool } from "../dataBase/connectionPostgreSql.js";
 
-const getClients = async () => {
+const app = express();
+const PORT = 3000;
+
+app.get("/", async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM public."Client" ORDER BY "idClient" ASC '
-);
+    const result = await pool.query(
+      'SELECT * FROM public."Client" ORDER BY "idClient" ASC'
+    );
 
     const clients = result.rows;
-
-    console.log(clients);
+    res.json(clients);
   } catch (error) {
     console.log(error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
-};
+});
 
-getClients();
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

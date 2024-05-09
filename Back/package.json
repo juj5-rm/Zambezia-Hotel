@@ -8,7 +8,7 @@
   "main": "postgreSql.js",
   "devDependencies": {},
   "scripts": {
-    "dev": "nodemon postgreSql.js",
+    "dev": "nodemon ./src/postgreSql.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
