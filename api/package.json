@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/juj5-rm/Final-proyect-DB/issues"
   },
-  "homepage": "https://github.com/juj5-rm/Final-proyect-DB#readme"
+  "homepage": "https://github.com/juj5-rm/Final-proyect-DB#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
