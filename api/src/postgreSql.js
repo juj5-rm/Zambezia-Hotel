@@ -8,11 +8,11 @@ const PORT = 3000;
 // Habilita CORS para todas las solicitudes
 app.use(cors());
 
-// Define tu ruta para manejar las solicitudes GET
+// Obtiene los tipos de habitaciones
 app.get("/", async (req, res) => {
   try {
     const result = await pool.query(
-      'SELECT * FROM public."Client" ORDER BY "idClient" ASC'
+      'SELECT * FROM public."typeRoom" ORDER BY "id" ASC'
     );
 
     const clients = result.rows;
