@@ -33,3 +33,21 @@
     font-size: 3vw;
     line-height: 0.5;
   }
+
+  .logoItemNavbar {
+    float: left; 
+    padding: 10px;
+  }
+
+  .logoNavbar {
+    width: 51px; 
+    height: 50px;
+  }
+
+  .nameNavbar {
+    float: left;
+  }
+
+  .navbar {
+    position: fixed;
+  }
