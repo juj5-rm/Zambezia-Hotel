@@ -1,0 +1,50 @@
+.content {
+  height: fit-content;
+  color: #000000;
+  padding-top: 140px;
+  padding-bottom: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #ffffff;
+  border-radius: 50px;
+}
+
+.content h2{
+    height: fit-content;
+    width: fit-content;
+    padding: 5px;
+    text-align: left;
+    border-bottom: 3px solid black;
+    font-size: 30px;
+}
+
+.paragraf {
+  text-align: left;
+  height: fit-content;
+  width: fit-content;
+  color: #000000;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+}
+
+.contact {
+  text-align: left;
+  height: fit-content;
+  width: fit-content;
+  color: #000000;
+  padding: 10px;
+  margin-left: 30px;
+  font-size: 16px;
+}
+
+.paragraf p{
+  height: fit-content;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  text-align: left;
+  font-size: 17px;
+}
+
+
+
