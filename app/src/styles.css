@@ -4,11 +4,14 @@
     padding: 0;
     overflow: hidden;
     background-color: #259f88;
-    font-size: 110%;
+    font-size: 1.5vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
   li {
-    float: left;
+    float: right;
   }
 
   li a {
@@ -23,8 +26,38 @@
     background-color: #0f3e50;
     color: #ffffff;
   }
+
   body {
     font-family: Garamond;
     text-align: center;
+    font-size: 3vw;
+    line-height: 0.5;
   }
-  
+
+  .startElementWithImage {
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../asset/img/hotel2.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+
+  .startElementWithColor {
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #888888;
+    width: 100%;
+    border: 1px solid#000000;
+  }
+
+  .aboutus {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
