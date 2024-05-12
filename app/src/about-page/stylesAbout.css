@@ -1,0 +1,78 @@
+.container {
+  display: flex; /* Utiliza flexbox para organizar los elementos en una fila */
+  justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.aboutImage {
+  width: 40%; /* Ancho de cada elemento */
+  height: auto; /* Altura automática para adaptarse al contenido */
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box; /* Incluir el relleno y el borde en el tamaño total */
+  position: relative; /* Posición relativa para elementos internos absolutos */
+  margin: 0 30px; /* Espacio horizontal entre los elementos */
+  margin-top: 120px; /* Espacio superior */
+  
+}
+
+.aboutImage h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #ffffff;
+  font-size: 60px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  background-color: rgba(46, 45, 45, 0.7); /* Color de fondo con opacidad */
+  border-radius: 5px; /* Redondea las esquinas del fondo */
+  backdrop-filter: blur(1px); /* Agrega un desenfoque al fondo para translucidez */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para suavizar las puntas */
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+  padding: 25px; /* Espacio interno */
+}
+
+
+.aboutImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block; /* Asegura que la imagen sea un bloque */
+}
+
+.aboutImage:hover img {
+  transform: scale(1.3);
+}
+
+.aboutImage:hover h2 {
+  opacity: 0; /* Ocultar el título al hacer hover */
+}
+
+.aboutImage .capa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(39, 40, 40, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Ocultar inicialmente */
+  transition: opacity 0.3s ease;
+}
+
+.aboutImage:hover .capa {
+  opacity: 1; /* Mostrar al hacer hover */
+}
+
+.aboutImage .capa p {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  justify-content: center;
+}
