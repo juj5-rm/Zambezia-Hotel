@@ -4,15 +4,15 @@
 }
 
 .aboutImage {
-  width: 40%; /* Ancho de cada elemento */
+  width: 35%; /* Ancho de cada elemento */
   height: auto; /* Altura automática para adaptarse al contenido */
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
   box-sizing: border-box; /* Incluir el relleno y el borde en el tamaño total */
   position: relative; /* Posición relativa para elementos internos absolutos */
-  margin: 0 30px; /* Espacio horizontal entre los elementos */
-  margin-top: 120px; /* Espacio superior */
+  margin: 0 60px; /* Espacio horizontal entre los elementos */
+  margin-top: 140px; /* Espacio superior */
   
 }
 
