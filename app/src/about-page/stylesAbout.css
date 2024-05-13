@@ -13,7 +13,7 @@
   box-sizing: border-box; /* Incluir el relleno y el borde en el tamaño total */
   position: relative; /* Posición relativa para elementos internos absolutos */
   margin: 0 60px; /* Espacio horizontal entre los elementos */
-  margin-top: 140px; /* Espacio superior */
+  margin-top: 30px; /* Espacio superior */
   
 }
 

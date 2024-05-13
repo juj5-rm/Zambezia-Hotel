@@ -1,15 +1,14 @@
-body{
+.cuerpo {
     margin: 0;
-    padding: 0;
-    height: 100vh;
+    padding: 100px;
+    height: 300px;
 }
 .formulario{
     position: relative;
-    margin-top: 20px;
     top : 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 500px;
     padding: 40px;
     background: #fff;
     border-radius: 10px;
