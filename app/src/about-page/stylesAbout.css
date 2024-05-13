@@ -1,6 +1,7 @@
 .container {
   display: flex; /* Utiliza flexbox para organizar los elementos en una fila */
-  justify-content: center; /* Centra los elementos horizontalmente */
+  justify-content: center;
+  margin-bottom: 30px; /* Centra los elementos horizontalmente */
 }
 
 .aboutImage {

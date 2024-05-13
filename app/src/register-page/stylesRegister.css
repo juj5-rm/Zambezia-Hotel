@@ -1,17 +1,21 @@
-body {
+
+.cuerporegistro {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 1000px;
 }
 
 .formulario {
-    margin-top: 140px; /* Espacio superior */
-    width: 400px;
+    position: relative;
+    margin-top: 80px;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
     padding: 40px;
     background: #fff;
     border-radius: 10px;
+    box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
 }
 
@@ -76,3 +80,4 @@ input[type="submit"]:hover {
 .login a {
     color: #124559;
 }
+
