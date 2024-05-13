@@ -6,6 +6,7 @@
     <title>Zambezia Hotel</title>
     <link rel="icon" type="image/x-icon" href="../../asset/img/logoHotel.png" />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./stylesLogin.css" />
     <link rel="stylesheet" href="../styles/navBar.css" />
   </head>
   <body>
@@ -19,7 +20,7 @@
               class="logoNavbar"
             />
           </li>
-          <li>
+          <li class="nameNavbar">
             <a href="../index.html"><b>ZAMBEZIA HOTEL</b></a>
           </li>
         </div>
@@ -31,7 +32,7 @@
             <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
           </li>
           <li>
-            <a href="./index.html"><b>Mis reservas</b></a>
+            <a href="../booking-page/index.html"><b>Mis reservas</b></a>
           </li>
           <li class="loginNavBar">
             <a href="../login-page/index.html"
@@ -41,6 +42,23 @@
         </div>
       </ul>
     </nav>
+    <div class="formulario">
+      <h1>Bienvenido a Zambesia</h1>
+      <form method="post">
+        <div class="username">
+          <input type="text" name="username" id="username" placeholder="Ingresa tu correo" required />
+        </div>
+        <div class="password">
+          <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" required />
+        </div>
+        <div class="remember">
+          <p><a href="../rememberPassword-page/index.html">¿Olvidaste tu contraseña?</a></p>
+        </div>
+        <input type="submit" value="Iniciar sesión">
+        <div class="register">
+          <p>¿No tienes una cuenta? <a href="../register-page/index.html">Regístrate</a></p>
+      </form>
+    </div>
     <script src="./app.js"></script>
   </body>
 </html>
