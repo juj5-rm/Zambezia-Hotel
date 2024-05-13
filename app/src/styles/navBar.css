@@ -60,3 +60,6 @@ li a:hover {
     width: 50px;
   }
 }
+.loginNavBar a img {
+  width: 50px;
+}
