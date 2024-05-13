@@ -61,8 +61,7 @@ input[type="submit"]{
     cursor: pointer;
 }
 input[type="submit"]:hover{
-    border-color: black;
-    transition: 0,5s;
+    background: #124559; /* Cambia el color al pasar el mouse si lo deseas */
 }
 .register{
     margin: 10px 0;
