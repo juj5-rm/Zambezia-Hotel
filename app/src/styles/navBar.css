@@ -30,7 +30,7 @@ li a {
   border: 2px solid transparent;
 }
 
-li a:hover {
+.containerNavBar a:hover {
   border-bottom: 2px solid #e4ca97;
 }
 
