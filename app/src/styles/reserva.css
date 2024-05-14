@@ -1,0 +1,54 @@
+.btn-booking {
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    padding: 17px 20px;
+    bottom: 130px;
+    right: 20px;
+    background-color: #e4ca97;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;    
+  }
+
+  .btn-booking a {
+    text-decoration: none;    
+    color: #01161e;
+    display: flex;
+    align-items: center;
+    overflow: hidden;    
+    padding: 3px;
+    transition: all 0.6s ease-in-out; 
+  }
+  
+  .btn-booking a i {
+    font-size: 30px;   /* Transición suave para el cambio de tamaño */
+    transition: all 0.3s ease-in-out; 
+  }
+  
+  .btn-booking a .btn-text {
+    display: none; /* Transición suave para la opacidad */ 
+    transition: all 0.6s ease-in-out; 
+    font-size: 0px;
+  }
+  
+  .btn-booking:hover a i {
+    transform: scale(1.2); /* Escala aumentada en un 20% al pasar el cursor */
+  }
+  
+  .btn-booking:hover a .btn-text {
+    display: inline-block;
+    margin-left: 15px; /* Ajustar según necesites */
+    opacity: 1; /* Mostrar el texto */
+    font-size: 15px;
+  }
+  
+  .btn-booking:hover {    
+    background-color: white;
+    color: #e4ca97;
+  }
+  
