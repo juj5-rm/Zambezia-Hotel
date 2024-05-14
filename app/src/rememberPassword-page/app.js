@@ -17,7 +17,7 @@ changePasswordForm.addEventListener("submit", async (event) => {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/changePassword", {
+    const response = await fetch("https://q4l2x4sw-3000.use2.devtunnels.ms/changePassword", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

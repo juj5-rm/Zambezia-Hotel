@@ -35,7 +35,7 @@ form.addEventListener("submit", async (event) => {
 
   console.log(infoUser);
   try {
-    const result = await fetch("http://localhost:3000/createUser", {
+    const result = await fetch("https://q4l2x4sw-3000.use2.devtunnels.ms/createUser ", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

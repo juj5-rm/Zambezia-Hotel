@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/";
+const url = "https://q4l2x4sw-3000.use2.devtunnels.ms/";
 
 document.addEventListener("DOMContentLoaded", () => {
   const fetchData = async () => {
