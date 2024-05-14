@@ -20,3 +20,11 @@ export class typeRoom {
   createdAt; //Date
   updatedAt; //Date
 }
+
+export class Room {
+  idRoom; //int
+  numberRoom; //int
+  idTypeRoom; //int
+  createdAt; //Date
+  updatedAt; //Date
+}

@@ -121,6 +121,16 @@ app.post("/createUser", async (req, res) => {
   } = req.body; // Obtener los datos del objeto User enviado en la solicitud
 
   try {
+    // Verificar si ya existe un usuario con el mismo email o documento
+    const existingUser = await pool.query(
+      'SELECT * FROM public.users WHERE "emailUser" = $1 OR "documentUser" = $2',
+      [emailUser, documentUser]
+    );
+
+    if (existingUser.rows.length > 0) {
+      return res.status(400).json({ error: "User already exists" });
+    }
+
     // Insertar el nuevo usuario en la base de datos y obtener el ID generado
     const result = await pool.query(
       'INSERT INTO public.users ("passwordUser","nameUser", "lastNameUser","documentUser", "emailUser", "phoneNumberUser", "adressUser", "typeUser") VALUES ($1, $2, $3, $4, $5, $6, $7 ,$8) RETURNING "idUser"',
@@ -221,7 +231,12 @@ app.post("/verifyUser", async (req, res) => {
     // Verificar si se encontró un usuario
     if (user) {
       // Devolver solo el ID del usuario
-      res.json({ idUser: user.idUser });
+      res.json({
+        idUser: user.idUser,
+        nameUser: user.nameUser,
+        lastNameUser: user.lastNameUser,
+        typeUser: user.typeUser,
+      });
     } else {
       // Usuario no encontrado o contraseña incorrecta
       res.status(401).json({ error: "Incorrect email or password" });
@@ -257,6 +272,16 @@ app.post("/createTypeRoom", async (req, res) => {
   const { nameTypeRoom, maxCapacity, price } = req.body; // Obtener los datos del objeto TypeRoom enviado en la solicitud
 
   try {
+    // Verificar si ya existe un tipo de habitación con el mismo nombre
+    const existingTypeRoom = await pool.query(
+      'SELECT * FROM public."typeRoom" WHERE "nameTypeRoom" = $1',
+      [nameTypeRoom]
+    );
+
+    if (existingTypeRoom.rows.length > 0) {
+      return res.status(400).json({ error: "TypeRoom already exists" });
+    }
+
     // Insertar el nuevo tipo de habitación en la base de datos y obtener el ID generado
     const result = await pool.query(
       'INSERT INTO public."typeRoom" ("nameTypeRoom", "maxCapacity", "price") VALUES ($1, $2, $3) RETURNING "id"',
@@ -267,7 +292,7 @@ app.post("/createTypeRoom", async (req, res) => {
 
     res.json({
       message: "TypeRoom created successfully",
-      data: { id },
+      data: { id: idTypeRoom }, // Corregido de 'id' a 'idTypeRoom'
     }); // Devolver el ID del tipo de habitación creado en la respuesta
   } catch (error) {
     console.log(error);
@@ -312,6 +337,26 @@ app.delete("/deleteTypeRoom/:id", async (req, res) => {
 });
 
 //Endpoints para habitación
+
+// crear una habitación
+app.post("/createRoom", async (req, res) => {
+  const { numberRoom, idTypeRoom, statusRoom } = req.body; // Obtener los datos del objeto Room enviado en la solicitud
+
+  try {
+    // Insertar la nueva habitación en la base de datos y obtener el ID generado
+    const result = await pool.query(
+      'INSERT INTO public."room" ("numberRoom", "idTypeRoom", "statusRoom") VALUES ($1, $2, $3) RETURNING "idRoom"',
+      [numberRoom, idTypeRoom, statusRoom]
+    );
+
+    const idRoom = result.rows[0].idRoom; // Obtener el ID generado
+
+    res.json({ message: "Room created successfully", data: { idRoom } }); // Devolver el ID de la habitación creada en la respuesta
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 // Inicia el servidor
 app.listen(PORT, () => {
