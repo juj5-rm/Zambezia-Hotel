@@ -1,5 +1,5 @@
 .container {
-  display: flex; /* Utiliza flexbox para organizar los elementos en una fila */
+  display: flex;/* Utiliza flexbox para organizar los elementos en una fila */
   justify-content: center;
   margin-bottom: 30px; /* Centra los elementos horizontalmente */
 }
