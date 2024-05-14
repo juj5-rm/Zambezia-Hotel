@@ -45,14 +45,27 @@
       </ul>
     </nav>
     <div class="fondoNavbar"></div>
-    <div class="formulario">
-      <h1>Recuperar Contraseña</h1>
-      <form id="changePasswordForm" method="post"  action="">
+    <div class="cuerporememberpassword">
+      <div class="formulario">
+        <h1>Recuperar Contraseña</h1>
+        <form id="changePasswordForm" method="post" action="">
           <div class="input-container">
-              <input type="email" name="email" id="email" placeholder="Correo Electrónico" required />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Correo Electrónico"
+              required
+            />
           </div>
           <div class="input-container">
-              <input type="password" name="newPassword" id="newPassword" placeholder="Nueva contraseña" required />
+            <input
+              type="password"
+              name="newPassword"
+              id="newPassword"
+              placeholder="Nueva contraseña"
+              required
+            />
           </div>
           <div class="input-container">
             <input
@@ -64,41 +77,46 @@
               oninput="checkPasswordMatch()"
             />
           </div>
-          <p id="passwordMatchError" style="display: none; color: red;">Las contraseñas no coinciden</p>
+          <p id="passwordMatchError" style="display: none; color: red">
+            Las contraseñas no coinciden
+          </p>
           <button type="submit">Recuperar Contraseña</button>
           <div class="login">
-              <p>¿Recuerdas tu contraseña? <a href="../login-page/index.html">Inicia sesión</a></p>
+            <p>
+              ¿Recuerdas tu contraseña?
+              <a href="../login-page/index.html">Inicia sesión</a>
+            </p>
           </div>
-      </form>
-  </div>
-  <footer id="footer" class="Footer">
-    <div class="containerFooter">
-      <div class="waterMark">
-        <p>Barú, Bolivar, Colombia</p>
-        <p>hotelzambezia@gmail.com</p>
-        <p>+57 3405252 EXT 100</p>
+        </form>
       </div>
-      <div class="redescopy">
-        <div class="redes">
-          <ul class="siguenos">
-            <li>
-              <a href="https://www.facebook.com/" target="_blank"
-                ><i class="fa-brands fa-square-facebook redesfooter"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://twitter.com/?lang=en" target="_blank"
-                ><i class="fa-brands fa-square-x-twitter redesfooter"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/" target="_blank"
-                ><i class="fa-brands fa-square-instagram redesfooter"></i
-              ></a>
-            </li>
-          </ul>
+    </div>
+    <footer id="footer" class="Footer">
+      <div class="containerFooter">
+        <div class="waterMark">
+          <p>Barú, Bolivar, Colombia</p>
+          <p>hotelzambezia@gmail.com</p>
+          <p>+57 3405252 EXT 100</p>
         </div>
-
+        <div class="redescopy">
+          <div class="redes">
+            <ul class="siguenos">
+              <li>
+                <a href="https://www.facebook.com/" target="_blank"
+                  ><i class="fa-brands fa-square-facebook redesfooter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/?lang=en" target="_blank"
+                  ><i class="fa-brands fa-square-x-twitter redesfooter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank"
+                  ><i class="fa-brands fa-square-instagram redesfooter"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
           <p id="copyright">Copyright © 2024 Zambezia Hotel</p>
         </div>
         <div class="contentFooter">
@@ -119,7 +137,7 @@
             <dd>Habitaciones</dd>
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
             <dd><a href="../about-page/index.html">Conocenos</a></dd>
-            <dd>Reservar</dd>
+            <dd><a href="../booking-page/index.html">Reservar</a></dd>
           </dl>
         </div>
       </div>
