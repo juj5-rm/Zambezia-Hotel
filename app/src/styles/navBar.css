@@ -30,7 +30,7 @@ li a {
   border: 2px solid transparent;
 }
 
-li a:hover {
+.containerNavBar a:hover {
   border-bottom: 2px solid #e4ca97;
 }
 
@@ -59,4 +59,7 @@ li a:hover {
   .logoNavbar {
     width: 50px;
   }
+}
+.loginNavBar a img {
+  width: 50px;
 }
