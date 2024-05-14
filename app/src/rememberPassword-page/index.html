@@ -47,59 +47,32 @@
         </div>
       </ul>
     </nav>
-    <div class="fondoNavbar"></div>
-    <footer id="footer" class="Footer">
-      <div class="containerFooter">
-        <div class="waterMark">
-          <p>Barú, Bolivar, Colombia</p>
-          <p>hotelzambezia@gmail.com</p>
-          <p>+57 3405252 EXT 100</p>
-        </div>
-        <div class="redescopy">
-          <div class="redes">
-            <ul class="siguenos">
-              <li>
-                <a href="https://www.facebook.com/" target="_blank"
-                  ><i class="fa-brands fa-square-facebook redesfooter"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://twitter.com/?lang=en" target="_blank"
-                  ><i class="fa-brands fa-square-x-twitter redesfooter"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/" target="_blank"
-                  ><i class="fa-brands fa-square-instagram redesfooter"></i
-                ></a>
-              </li>
-            </ul>
+    <div class="formulario">
+      <h1>Recuperar Contraseña</h1>
+      <form method="post" action="tu_script_de_recuperacion.php">
+          <div class="input-container">
+              <input type="email" name="email" id="email" placeholder="Correo Electrónico" required />
           </div>
-          <p id="copyright">Copyright © 2024 Zambezia Hotel</p>
-        </div>
-        <div class="contentFooter">
-          <dl class="legalinfo">
-            <dt>
-              <b>Informacion legal</b>
-            </dt>
-            <dd><br /></dd>
-            <dd><a href="#">Politica de privacidad</a></dd>
-            <dd><a href="#">Terminos y condiciones</a></dd>
-            <dd><a href="#">Politica de cookies</a></dd>
-          </dl>
-          <dl class="webnav">
-            <dt><b>Mapa del sitio</b></dt>
-            <dd><br /></dd>
-            <dd><a href="../index.html">Inicio</a></dd>
-            <dd>servicios</dd>
-            <dd>Habitaciones</dd>
-            <dd><a href="../contact-page/index.html">Contactanos</a></dd>
-            <dd><a href="../about-page/index.html">Conocenos</a></dd>
-            <dd>Reservar</dd>
-          </dl>
-        </div>
-      </div>
-    </footer>
+          <div class="input-container">
+              <input type="password" name="newPassword" id="newPassword" placeholder="Nueva contraseña" required />
+          </div>
+          <div class="input-container">
+            <input
+              type="password"
+              name="confirmPasswordUser"
+              id="confirmPasswordUser"
+              placeholder="Confirmar contraseña"
+              required
+              oninput="checkPasswordMatch()"
+            />
+          </div>
+          <p id="passwordMatchError" style="display: none; color: red;">Las contraseñas no coinciden</p>
+          <button type="submit">Recuperar Contraseña</button>
+          <div class="login">
+              <p>¿Recuerdas tu contraseña? <a href="../login-page/index.html">Inicia sesión</a></p>
+          </div>
+      </form>
+  </div>
     <script src="./app.js"></script>
   </body>
 </html>

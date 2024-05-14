@@ -49,7 +49,7 @@ form .password{
     text-align: center;
     font-size: 16px;
 }
-input[type="submit"]{
+button[type="submit"]{
     width: 100%;
     height: 50px;
     background: #01161e;
@@ -60,7 +60,7 @@ input[type="submit"]{
     border-radius: 20px;
     cursor: pointer;
 }
-input[type="submit"]:hover{
+button[type="submit"]:hover{
     background: #124559; /* Cambia el color al pasar el mouse si lo deseas */
 }
 .register{

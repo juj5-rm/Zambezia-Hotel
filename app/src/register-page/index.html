@@ -186,6 +186,94 @@
         </div>
       </div>
     </footer>
+    <div class="formulario">
+      <h2>Regístrate en Zambesia</h2>
+      <form method="post" id="registerUser">
+        <div class="input-container">
+          <input
+            type="text"
+            name="nameUser"
+            id="nameUser"
+            placeholder="Nombre"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            name="lastNameUser"
+            id="lastNameUser"
+            placeholder="Apellido"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            type="number"
+            name="documentUser"
+            id="documentUser"
+            placeholder="Documento de identidad"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            type="email"
+            name="emailUser"
+            id="emailUser"
+            placeholder="Correo electrónico"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            type="number"
+            name="phoneNumberUser"
+            id="phoneNumberUser"
+            placeholder="Número de teléfono"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            name="adressUser"
+            id="adressUser"
+            placeholder="Dirección"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            type="password"
+            name="passwordUser"
+            id="passwordUser"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            type="password"
+            name="confirmPasswordUser"
+            id="confirmPasswordUser"
+            placeholder="Confirmar contraseña"
+            required
+            oninput="checkPasswordMatch()"
+          />
+        </div>
+        <p id="passwordMatchError" style="display: none; color: red;">Las contraseñas no coinciden</p>
+        <button type="submit">Registrarse</button>
+        <div class="login">
+          <p>
+            ¿Ya tienes una cuenta?
+            <a href="../login-page/index.html">Inicia sesión</a>
+          </p>
+        </div>
+      </form>
+    </div>
     <script src="./app.js"></script>
   </body>
 </html>
+
+

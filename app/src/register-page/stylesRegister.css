@@ -18,7 +18,8 @@
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
 }
 
-.formulario h1 {
+.formulario h2 {
+    font-size: 30px;
     text-align: center;
     padding: 0 0 20px 0;
     border-bottom: 3px solid #9f9d9f;
@@ -53,7 +54,7 @@ form .input-container{
     border-color: #01161e;
 }
 
-input[type="submit"] {
+button[type="submit"] {
     width: 100%;
     height: 50px;
     background: #01161e;
@@ -66,7 +67,7 @@ input[type="submit"] {
     margin-top: 20px;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
     background: #124559; /* Color de fondo al pasar el mouse */
 }
 
