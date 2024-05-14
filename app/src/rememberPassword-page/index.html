@@ -42,6 +42,32 @@
         </div>
       </ul>
     </nav>
+    <div class="formulario">
+      <h1>Recuperar Contraseña</h1>
+      <form method="post" action="tu_script_de_recuperacion.php">
+          <div class="input-container">
+              <input type="email" name="email" id="email" placeholder="Correo Electrónico" required />
+          </div>
+          <div class="input-container">
+              <input type="password" name="newPassword" id="newPassword" placeholder="Nueva contraseña" required />
+          </div>
+          <div class="input-container">
+            <input
+              type="password"
+              name="confirmPasswordUser"
+              id="confirmPasswordUser"
+              placeholder="Confirmar contraseña"
+              required
+              oninput="checkPasswordMatch()"
+            />
+          </div>
+          <p id="passwordMatchError" style="display: none; color: red;">Las contraseñas no coinciden</p>
+          <button type="submit">Recuperar Contraseña</button>
+          <div class="login">
+              <p>¿Recuerdas tu contraseña? <a href="../login-page/index.html">Inicia sesión</a></p>
+          </div>
+      </form>
+  </div>
     <script src="./app.js"></script>
   </body>
 </html>
