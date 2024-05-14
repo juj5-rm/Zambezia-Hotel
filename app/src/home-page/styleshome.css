@@ -6,17 +6,20 @@
 
 .carrusel {
 	height: 400px;
+	width: 100%;
 	overflow: hidden;
 }
 
 .itemCarrusel {
 	height: 400px;
+	width: 100%;
 	position: relative;
 }
 
 
 .tarjetaCarrusel {
     height: 100%;
+	width: 100%;
 }
 
 .flechaCarrusel {
