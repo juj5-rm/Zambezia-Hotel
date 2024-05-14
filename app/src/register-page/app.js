@@ -32,6 +32,7 @@ form.addEventListener("submit", async (event) => {
   infoUser.adressUser = document.getElementById("adressUser").value;
   infoUser.passwordUser = document.getElementById("passwordUser").value;
   infoUser.typeUser = "Usuario";
+
   console.log(infoUser);
   try {
     const result = await fetch("http://localhost:3000/createUser", {
