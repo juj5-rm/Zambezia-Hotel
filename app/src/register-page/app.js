@@ -3,7 +3,7 @@ class User {
   passwordUser; //String
   nameUser; //String
   lastNameUser; //String
-  documentUser; //String
+  documentUser; //int
   emailUser; //String
   phoneNumberUser; //int
   adressUser; //String
