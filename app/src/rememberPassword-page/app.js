@@ -10,20 +10,19 @@ changePasswordForm.addEventListener("submit", async (event) => {
 
   const email = document.getElementById("email").value;
   const newPassword = document.getElementById("newPassword").value;
-
-  const changePasswordData = {
-    email: email,
-    newPassword: newPassword,
-  };
-
   try {
-    const response = await fetch("https://q4l2x4sw-3000.use2.devtunnels.ms/changePassword", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(changePasswordData),
-    });
+    const response = await fetch(
+      "https://q4l2x4sw-3000.use2.devtunnels.ms/changePassword/" + email,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          passwordUser: newPassword,
+        }),
+      }
+    );
 
     if (response.ok) {
       console.log("Contraseña cambiada exitosamente");
@@ -47,8 +46,9 @@ changePasswordForm.addEventListener("submit", async (event) => {
 
 function checkPasswordMatch() {
   const newPassword = document.getElementById("newPassword").value;
-  const confirmPasswordUser =
-    document.getElementById("confirmPasswordUser").value;
+  const confirmPasswordUser = document.getElementById(
+    "confirmPasswordUser"
+  ).value;
   const errorElement = document.getElementById("passwordMatchError");
 
   if (newPassword !== confirmPasswordUser) {

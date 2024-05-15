@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #c7b691;
+  font-family: "Franklin Gothic", "Arial Narrow", Arial, sans-serif;
+}
+
+.fondoNavbar {
+  background-color: white;
+  width: 100%;
+  height: 113px;
+}
+.box {
+  display: none;
+  background-color: transparent;
+  backdrop-filter: blur(5px); /* Aplicar desenfoque al fondo */
+  position: absolute;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  right: 50px;
+  flex-flow: wrap column;
+  gap: 20px;
+  align-items: right;
+  justify-content: right;
+  padding: 20px;
+}
+
+.buttonMenu {
+  color: white;
+  width: 100%;
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: right
+  ;
+  transition: all 0.1s ease-in-out;
+}
+
+.buttonMenu:hover {
+  scale: 1.01;
+  border-bottom: 1px solid white;
+}

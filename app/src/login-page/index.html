@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zambezia Hotel</title>
     <link rel="icon" type="image/x-icon" href="../../asset/img/logoHotel.png" />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../home-page/styles.css" />
     <link rel="stylesheet" href="./stylesLogin.css" />
     <link rel="stylesheet" href="../styles/navBar.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
@@ -26,7 +26,7 @@
             />
           </li>
           <li class="nameNavbar">
-            <a href="../index.html"><b>ZAMBEZIA HOTEL</b></a>
+            <a href="../home-page/index.html"><b>ZAMBEZIA HOTEL</b></a>
           </li>
         </div>
         <div class="containerNavBar containerLinks">
@@ -37,7 +37,7 @@
             <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
           </li>
           <li class="loginNavBar">
-            <a href="../login-page/index.html"
+            <a
               ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
             /></a>
           </li>
@@ -48,12 +48,12 @@
     <div class="cuerpo">
       <div class="formulario">
         <h1>Bienvenido a Zambesia</h1>
-        <form method="post">
+        <form id="loginForm" method="post">
           <div class="username">
             <input
               type="text"
-              name="username"
-              id="username"
+              name="email"
+              id="email"
               placeholder="Ingresa tu correo"
               required
             />
@@ -84,6 +84,7 @@
         </form>
       </div>
     </div>
+    <p id="loginMessage" class="error-message"></p>
     <footer id="footer" class="Footer">
       <div class="containerFooter">
         <div class="waterMark">
@@ -126,7 +127,7 @@
           <dl class="webnav">
             <dt><b>Mapa del sitio</b></dt>
             <dd><br /></dd>
-            <dd><a href="../index.html">Inicio</a></dd>
+            <dd><a href="../home-page/index.html">Inicio</a></dd>
             <dd>servicios</dd>
             <dd>Habitaciones</dd>
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
@@ -136,6 +137,8 @@
         </div>
       </div>
     </footer>
-    <script src="./app.js"></script>
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="./verifyUser.js"></script>
+    <script type="module" src="./userData.js"></script>
   </body>
 </html>

@@ -7,19 +7,20 @@
 .carrusel {
 	height: 400px;
 	width: 100%;
+	background-color: black;
 	overflow: hidden;
 }
 
 .itemCarrusel {
 	height: 400px;
-	width: 100%;
+	width: fit-content;
+	margin: 0 auto 0;
 	position: relative;
 }
 
 
 .tarjetaCarrusel {
     height: 100%;
-	width: 100%;
 }
 
 .flechaCarrusel {
@@ -47,6 +48,4 @@
 
 .itemCarrusel > img {
 	width: 100%;
-	height: 100%;
 }
-
