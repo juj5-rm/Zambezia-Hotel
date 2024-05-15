@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zambezia Hotel</title>
-    <link rel="icon" type="image/x-icon" href="../../asset/img/logoHotel.png" />
-    <link rel="stylesheet" href="../home-page/styles.css" />
+    <link rel="icon" type="image/x-icon" href="../asset/img/logoHotel.png" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="../styles/navBar.css" />
-    <link rel="stylesheet" href="./stylesAbout.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="./styleshome.css" />
     <link rel="stylesheet" href="../styles/reserva.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
@@ -27,7 +27,7 @@
             />
           </li>
           <li>
-            <a href="../home-page/index.html"><b>ZAMBEZIA HOTEL</b></a>
+            <a href="./index.html"><b>ZAMBEZIA HOTEL</b></a>
           </li>
         </div>
         <div class="containerNavBar containerLinks">
@@ -35,12 +35,13 @@
             <a href="../contact-page/index.html"><b>Contactanos</b></a>
           </li>
           <li>
-            <a href="./index.html"><b>Sobre nosotros</b></a>
+            <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
           </li>
           <li class="loginNavBar">
             <a id="logged-in"
               ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
             /></a>
+
             <div id="dialog" class="box" style="display: none" ;>
               <button id="reservationsButton" class="buttonMenu">
                 Mis reservas
@@ -55,45 +56,65 @@
       </ul>
     </nav>
     <div class="fondoNavbar"></div>
-    <div class="container">
-      <div class="aboutImage">
-        <h2>Misión</h2>
-        <img src="../../asset/img/hotelFoto1.jpeg" alt="" />
-        <div class="capa">
-          <p>
-            En nuestro hotel, nos comprometemos a superar las expectativas de
-            nuestros huéspedes al ofrecer un servicio excepcional y de alta
-            calidad. Nuestro objetivo es proporcionar una experiencia
-            inigualable, donde cada detalle refleje nuestro compromiso con la
-            excelencia y la satisfacción del cliente. Buscamos crear un ambiente
-            acogedor y memorable, donde cada huésped se sienta especial y
-            valorado. A través de nuestro servicio personalizado, instalaciones
-            de primera clase y atención al detalle, aspiramos a ser reconocidos
-            como el destino preferido por quienes buscan lo mejor en
-            hospitalidad. Nuestra misión es convertir cada estadía en una
-            experiencia inolvidable, dejando una impresión positiva que perdure
-            mucho después de que nuestros huéspedes hayan regresado a casa.
-          </p>
+    <div class="carrusel">
+      <div class="itemCarrusel" id="slider1">
+        <div class="tarjetaCarrusel" id="imagen1">
+          <img
+            src="../../asset/img/slider1.jpg"
+            alt="imagen carrusel inicio hotel"
+          />
+        </div>
+        <div class="flechaCarrusel">
+          <a href="#slider5"><i class="fa-solid fa-caret-left"></i> </a>
+          <a href="#slider2"><i class="fa-solid fa-caret-right"></i></a>
         </div>
       </div>
-
-      <div class="aboutImage">
-        <h2>Visión</h2>
-        <img src="../../asset/img/hotelFoto2.jpg" alt="" />
-        <div class="capa">
-          <p>
-            Nuestra visión es convertirnos en el referente de excelencia en
-            hospitalidad, reconocidos tanto a nivel local como internacional por
-            nuestro servicio de clase mundial y nuestras instalaciones de
-            primera categoría. Nos esforzamos por ser el destino preferido para
-            viajeros exigentes, quienes buscan una experiencia única y memorable
-            en cada estadía. A través de la innovación continua, el compromiso
-            con la calidad y la atención a los detalles, aspiramos a establecer
-            nuevos estándares en la industria hotelera. Visualizamos un futuro
-            donde nuestro hotel sea conocido por ofrecer no solo alojamiento,
-            sino también un estilo de vida de lujo y comodidad, donde cada
-            visita sea una experiencia verdaderamente extraordinaria.
-          </p>
+      <div class="itemCarrusel" id="slider2">
+        <div class="tarjetaCarrusel" id="imagen2">
+          <img
+            src="../../asset/img/slider2.jpg"
+            alt="imagen carrusel inicio hotel"
+          />
+        </div>
+        <div class="flechaCarrusel">
+          <a href="#slider1"><i class="fa-solid fa-caret-left"></i> </a>
+          <a href="#slider3"><i class="fa-solid fa-caret-right"></i></a>
+        </div>
+      </div>
+      <div class="itemCarrusel" id="slider3">
+        <div class="tarjetaCarrusel" id="imagen3">
+          <img
+            src="../../asset/img/slider3.jpg"
+            alt="imagen carrusel inicio hotel"
+          />
+        </div>
+        <div class="flechaCarrusel">
+          <a href="#slider2"><i class="fa-solid fa-caret-left"></i> </a>
+          <a href="#slider4"><i class="fa-solid fa-caret-right"></i></a>
+        </div>
+      </div>
+      <div class="itemCarrusel" id="slider4">
+        <div class="tarjetaCarrusel" id="imagen4">
+          <img
+            src="../../asset/img/slider4.jpg"
+            alt="imagen carrusel inicio hotel"
+          />
+        </div>
+        <div class="flechaCarrusel">
+          <a href="#slider3"><i class="fa-solid fa-caret-left"></i> </a>
+          <a href="#slider5"><i class="fa-solid fa-caret-right"></i></a>
+        </div>
+      </div>
+      <div class="itemCarrusel" id="slider5">
+        <div class="tarjetaCarrusel" id="imagen5">
+          <img
+            src="../../asset/img/slider5.jpg"
+            alt="imagen carrusel inicio hotel"
+          />
+        </div>
+        <div class="flechaCarrusel">
+          <a href="#slider4"><i class="fa-solid fa-caret-left"></i> </a>
+          <a href="#slider1"><i class="fa-solid fa-caret-right"></i></a>
         </div>
       </div>
     </div>
@@ -149,17 +170,19 @@
           <dl class="webnav">
             <dt><b>Mapa del sitio</b></dt>
             <dd><br /></dd>
-            <dd><a href="../home-page/index.html">Inicio</a></dd>
+            <dd><a href="./index.html">Inicio</a></dd>
             <dd>servicios</dd>
             <dd>Habitaciones</dd>
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
-            <dd><a href="./index.html">Conocenos</a></dd>
+            <dd><a href="../about-page/index.html">Conocenos</a></dd>
             <dd><a href="../booking-page/index.html">Reservar</a></dd>
           </dl>
         </div>
       </div>
     </footer>
+
+    <script type="module" src="./app.js"></script>
     <script type="module" src="../login-page/verifyUser.js"></script>
-    <script src="./app.js"></script>
+    <script type="module" src="../login-page/userData.js"></script>
   </body>
 </html>
