@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.importancia {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo h3 {
+    font-size: 25px;
+}
+
+#tituloBlock1 {
+    font-size: 100px;
+    color: #113b4b;
+}
+
+#tituloBlock2 {
+    font-size: 35px;
+    padding: 5px;
+    border-top: 3px solid #113b4b;
+}
+
+.beneficios {
+    margin: 10px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.itembeneficios {    
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 6px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.itembeneficios:hover {
+    background-color: #01161e;
+}
+
+.itembeneficios:hover  p{
+    color: #ffffff;
+}
+
+.itembeneficios h2 {
+    color: #e4ca97;
+}
+
+.itembeneficios p {
+    color: #113b4b;
+    text-align: center;
+}
+
+.itembeneficios i {
+    color: #e4ca97;
+    font-size: 30px;
+}
+
+.informationBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e3dccd;
+    padding: 50px;
+    text-align: center;
+}
+
+.informationBox img {
+    width: 150px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0,  0, 0,0.5);
+}
+
+.informationBox h1 {
+    color: #113b4b;
+    font-size: 90px;
+}
+
+.informationBox h2 {
+    font-size: 50px;
+}
+
+.informationBox p {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.servicios {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.servicios h2 {
+    color: #113b4b;
+    font-size: 50px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #113b4b;
+    width: fit-content;
+}
+
+.servicios h3 {
+    font-size: 30px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+.gridservicios {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 10px;
+    width: 100%;
+}
+
+.servicio {
+    width: 500px; /* Ancho de cada elemento */
+    height: 500px; /* Altura automática para adaptarse al contenido */
+    border-radius: 50px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    margin: 30px;
+    padding: 20px;
+}
+
