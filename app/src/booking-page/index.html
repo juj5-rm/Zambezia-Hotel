@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../styles/navBar.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="./stylesBooking.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
       crossorigin="anonymous"
@@ -44,6 +45,63 @@
       </ul>
     </nav>
     <div class="fondoNavbar"></div>
+    <!--contenido pagina-->
+    <!--reservar ahora-->
+    <div class="formSpace">
+      <div class="formularioReserva">
+        <h2>Reserva</h2>
+        <form class="reservacion" method="post">
+          <div class="containerinput">
+            <input
+              type="date"
+              name="startDate"
+              id="startDateReservation"
+              placeholder="Fecha de entrada"
+              required
+            />
+          </div>
+          <div class="containerinput">
+            <input
+              type="date"
+              name="finishDate"
+              id="finishDateReservation"
+              placeholder="Fecha de salida"
+              required
+            />
+          </div>
+          <div class="containerinput">
+            <select name="typeRoom" id="typeroom" required>
+              <option value="" disabled selected>
+                Selecciona el tipo de habitación
+              </option>
+            </select>
+          </div>
+          <button type="button" onclick="showup()" id="botonDisponibilidad">
+            verificar disponibilidad
+          </button>
+          <div class="containerinput hidden">
+            <input
+              type="number"
+              name="idUser"
+              id="iduser"
+              placeholder="id usuario"
+              required
+            />
+          </div>
+          <div class="containerinput automatic" id="idRoom">
+            <select name="idRoom" id="idroom" required>
+              <option value="" disabled selected>
+                Selecciona el numero de habitacion
+              </option>
+            </select>
+          </div>
+          <button type="submit" id="botonReserva">Reserva</button>
+        </form>
+      </div>
+    </div>
+    <!--mis reservas-->
+    <div class="vistaMisReservas"></div>
+    <!--footer-->
     <footer id="footer" class="Footer">
       <div class="containerFooter">
         <div class="waterMark">

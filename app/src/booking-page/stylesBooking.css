@@ -1,0 +1,40 @@
+.formSpace {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 0;
+    padding: 30px;
+}
+
+.formularioReserva {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    width: 40%;
+    height: fit-content;
+    padding: 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.formularioReserva h2 {
+    margin-bottom: 20px;
+    border-bottom: 3px solid #e4ca97;
+}
+
+.formularioReserva input {
+    width: 100%;
+    margin: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border: none;
+}
+
+.containerinput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 2px solid #adadad;
+}
