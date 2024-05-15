@@ -19,7 +19,7 @@ document.getElementById("logged-in").addEventListener("click", async () => {
         .getElementById("reservationsButton")
         .addEventListener("click", () => {
           // Redirigir a la página de reservas
-          window.location.href = "./booking-page/index.html";
+          window.location.href = "../booking-page/index.html";
           // Ocultar el cuadro de diálogo después de redirigir
           dialog.style.display = "none";
         });
