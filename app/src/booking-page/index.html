@@ -37,17 +37,15 @@
             <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
           </li>
           <li class="loginNavBar">
-            <a id="logged-in"
-              ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
-            /></a>
             <div id="dialog" class="box" style="display: none" ;>
               <button id="reservationsButton" class="buttonMenu">
+                <i class="fa-regular fa-square-check"></i>
                 Mis reservas
               </button>
               <button class="buttonMenu" id="logoutButton">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 Cerrar sesión
               </button>
-              <button id="closeBlockButton" class="buttonMenu">X</button>
             </div>
           </li>
         </div>
@@ -59,8 +57,9 @@
     <div class="formSpace">
       <div class="formularioReserva">
         <h2>Reserva</h2>
-        <form class="reservacion" method="post">
+        <form class="reservacion" method="post" id="bookingUser">
           <div class="containerinput">
+            <p>Fecha de llegada</p>
             <input
               type="date"
               name="startDate"
@@ -69,7 +68,9 @@
               required
             />
           </div>
+          <p class="errorp" id="error">Fecha no valida</p>
           <div class="containerinput">
+            <p>Fecha de salida</p>
             <input
               type="date"
               name="finishDate"
@@ -78,6 +79,7 @@
               required
             />
           </div>
+          <p class="errorp" id="error2">Fecha no valida</p>
           <div class="containerinput">
             <select name="typeRoom" id="typeroom" required>
               <option value="" disabled selected>
@@ -164,6 +166,7 @@
       </div>
     </footer>
     <script type="module" src="../login-page/verifyUser.js"></script>
-    <script src="../login-page/verifyUser.js"></script>
+    <script type="module" src="./loginData.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>

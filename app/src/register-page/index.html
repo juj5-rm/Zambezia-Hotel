@@ -51,10 +51,10 @@
         <form id="registerUser" method="post" action="">
           <div class="input-container">
             <input
-              type="number"
-              name="idUser"
-              id="idUser"
-              placeholder="id"
+              type="text"
+              name="nameUser"
+              id="nameUser"
+              placeholder="Nombre"
               required
             />
           </div>
@@ -122,7 +122,9 @@
               oninput="checkPasswordMatch()"
             />
           </div>
-          <p id="passwordMatchError" style="display: none; color: red;">Las contraseñas no coinciden</p>
+          <p id="passwordMatchError" style="display: none; color: red">
+            Las contraseñas no coinciden
+          </p>
           <button type="submit">Regístrate</button>
           <div class="login">
             <p>
