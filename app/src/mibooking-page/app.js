@@ -28,101 +28,93 @@ async function loadBookings() {
   var bookings = await getBooking(userData.idUser);
   console.log(bookings);
 
-  // Seleccionar el contenedor donde se añadirán las reservas
-  var containerBookings = document.querySelector(".containerBookings");
+  // Seleccionar el cuerpo de la tabla
+  var tableBody = document.querySelector("#BookingsView tbody");
+  // Eliminar la fila de "noResults" si existe
+  var noResultsRow = document.querySelector(".noResults");
+  if (noResultsRow) {
+    tableBody.removeChild(noResultsRow);
+  }
 
   if (bookings.length === 0) {
-    // Crear el contenedor de "Sin resultados"
-    var noResultsDiv = document.createElement("div");
-    noResultsDiv.className = "booking";
-
-    var h3NoResults = document.createElement("h3");
-    h3NoResults.textContent = "Sin resultados";
-    noResultsDiv.appendChild(h3NoResults);
-
-    var pNoResults = document.createElement("p");
-    pNoResults.textContent = "En este momento no has realizado ninguna reserva";
-    noResultsDiv.appendChild(pNoResults);
-
-    // Añadir el contenedor de "Sin resultados" al contenedor de reservas
-    containerBookings.appendChild(noResultsDiv);
+    // Si no hay reservas, volver a mostrar la fila "noResults"
+    document.getElementById("loader").style.display = "none";
+    document.body.style.overflow = "hidden";
+    var noResultsRow = document.createElement("tr");
+    noResultsRow.className = "noResults";
+    noResultsRow.innerHTML = `
+  <td colspan="6">
+    <i class="fa-solid fa-magnifying-glass"></i><br />
+    En este momento no has realizado ninguna reserva
+  </td>`;
+    tableBody.appendChild(noResultsRow);
   } else {
-    // Iterar sobre room types y añadir opciones al select
+    document.getElementById("loader").style.display = "none";
+    document.body.style.overflow = "hidden";
+    // Iterar sobre las reservas y añadir filas a la tabla
     bookings.forEach((booking) => {
-      // Crear el contenedor principal de la reserva
-      var bookingDiv = document.createElement("div");
-      bookingDiv.className = "booking";
+      var row = document.createElement("tr");
 
-      // Crear el contenedor de información de la reserva
-      var bookingInfoDiv = document.createElement("div");
-      bookingInfoDiv.className = "bookingInfo";
+      // Añadir ID de reserva
+      var tdId = document.createElement("td");
+      tdId.textContent = booking.idBooking;
+      row.appendChild(tdId);
 
-      // Añadir el contenido de la información de la reserva
-      var h3 = document.createElement("h3");
-      h3.textContent = "Reserva #" + booking.idBooking;
-      bookingInfoDiv.appendChild(h3);
+      // Añadir Fecha de llegada
+      var tdFechaLlegada = document.createElement("td");
+      tdFechaLlegada.textContent = formatDate(booking.startDate);
+      row.appendChild(tdFechaLlegada);
 
-      var h5FechaLlegada = document.createElement("h5");
-      h5FechaLlegada.textContent = "Fecha de llegada:";
-      bookingInfoDiv.appendChild(h5FechaLlegada);
+      // Añadir Fecha de salida
+      var tdFechaSalida = document.createElement("td");
+      tdFechaSalida.textContent = formatDate(booking.endDate);
+      row.appendChild(tdFechaSalida);
 
-      var pFechaLlegada = document.createElement("p");
-      pFechaLlegada.textContent = formatDate(booking.startDate);
-      bookingInfoDiv.appendChild(pFechaLlegada);
+      // Añadir Tipo de habitación
+      var tdHabitacion = document.createElement("td");
+      tdHabitacion.textContent = booking.nameTypeRoom;
+      row.appendChild(tdHabitacion);
 
-      var h5FechaSalida = document.createElement("h5");
-      h5FechaSalida.textContent = "Fecha de salida:";
-      bookingInfoDiv.appendChild(h5FechaSalida);
+      // Añadir Número de habitación
+      var tdNumeroHabitacion = document.createElement("td");
+      tdNumeroHabitacion.textContent = booking.numberRoom;
+      row.appendChild(tdNumeroHabitacion);
 
-      var pFechaSalida = document.createElement("p");
-      pFechaSalida.textContent = formatDate(booking.endDate);
-      bookingInfoDiv.appendChild(pFechaSalida);
+      // Añadir botones de acción
+      var tdAccion = document.createElement("td");
 
-      var h5Habitacion = document.createElement("h5");
-      h5Habitacion.textContent = "Habitación:";
-      bookingInfoDiv.appendChild(h5Habitacion);
-
-      var pHabitacion = document.createElement("p");
-      pHabitacion.textContent = booking.nameTypeRoom;
-      bookingInfoDiv.appendChild(pHabitacion);
-
-      var h5NumeroHabitacion = document.createElement("h5");
-      h5NumeroHabitacion.textContent = "Número de habitación:";
-      bookingInfoDiv.appendChild(h5NumeroHabitacion);
-
-      var pNumeroHabitacion = document.createElement("p");
-      pNumeroHabitacion.textContent = booking.numberRoom;
-      bookingInfoDiv.appendChild(pNumeroHabitacion);
-
-      // Añadir el contenedor de información al contenedor principal
-      bookingDiv.appendChild(bookingInfoDiv);
-
-      // Crear el contenedor de botones
-      var bookingButtonsDiv = document.createElement("div");
-      bookingButtonsDiv.className = "bookingButtons";
-
-      // Crear y añadir los botones de modificar y cancelar
+      // Crear botón de modificar con icono y título
       var buttonModificar = document.createElement("button");
       buttonModificar.className = "buttonBooking";
-      buttonModificar.textContent = "Modificar";
+      buttonModificar.title = "Modificar";
       buttonModificar.onclick = () => {
         modificateBooking(booking);
       };
-      bookingButtonsDiv.appendChild(buttonModificar);
 
+      var iconModificar = document.createElement("i");
+      iconModificar.className = "fa-solid fa-pencil";
+      buttonModificar.appendChild(iconModificar);
+
+      tdAccion.appendChild(buttonModificar);
+
+      // Crear botón de cancelar con texto
       var buttonCancelar = document.createElement("button");
       buttonCancelar.className = "buttonBooking";
-      buttonCancelar.textContent = "Cancelar";
+      buttonCancelar.title = "Cancelar";
       buttonCancelar.onclick = () => {
         deleteBooking(booking.idBooking);
       };
-      bookingButtonsDiv.appendChild(buttonCancelar);
 
-      // Añadir el contenedor de botones al contenedor principal
-      bookingDiv.appendChild(bookingButtonsDiv);
+      var iconCancelar = document.createElement("i");
+      iconCancelar.className = "fa-solid fa-trash-can";
+      buttonCancelar.appendChild(iconCancelar);
 
-      // Añadir el nuevo div de reserva al contenedor de reservas
-      containerBookings.appendChild(bookingDiv);
+      tdAccion.appendChild(buttonCancelar);
+
+      row.appendChild(tdAccion);
+
+      // Añadir la fila al cuerpo de la tabla
+      tableBody.appendChild(row);
     });
   }
 }
@@ -181,17 +173,15 @@ function validationds() {
 }
 
 function validationid() {
-  var idlogin = userData.idUser;
-  if (idlogin.value == "") {
+  if (userData.idUser == "") {
     window.alert("Por favor, inicie sesión para continuar."); // Muestra un mensaje de alerta
-    window.location.href = "../login-page/index.html"; // Redirige al usuario a la página de inicio de sesión
-    return false; // Devuelve false para evitar que el formulario se envíe
-  } else {
-    return true; // Devuelve true si el campo de identificación no está vacío
+    window.location.href = "../login-page/index.html"; // Devuelve true si el campo de identificación no está vacío
   }
 }
 
 async function deleteBooking(idBooking) {
+  document.getElementById("loader").style.display = "flex";
+  document.body.style.overflow = "hidden";
   try {
     const response = await fetch(
       `https://q4l2x4sw-3000.use2.devtunnels.ms/deleteBooking/${idBooking}`,
@@ -205,7 +195,6 @@ async function deleteBooking(idBooking) {
     }
 
     const data = await response.json();
-    window.alert("Reserva eliminada exitosamente.");
     window.location.reload(); // Recargar la página
   } catch (error) {
     console.log(error);
@@ -215,6 +204,7 @@ async function deleteBooking(idBooking) {
 
 function modificateBooking(booking) {
   document.getElementById("modificacionReserva").style.display = "flex";
+  document.getElementById("vistaTablaReservas").style.display = "none";
   document.getElementById("startDateReservation").value =
     booking.startDate.split("T")[0];
   document.getElementById("finishDateReservation").value =
@@ -312,7 +302,8 @@ class modificateBookingClass {
 const form = document.getElementById("modificateBookingUser");
 form.addEventListener("submit", async (event) => {
   event.preventDefault(); // Evitar el envío del formulario por defecto
-
+  document.getElementById("loader").style.display = "flex";
+  document.body.style.overflow = "hidden";
   const infoBooking = new modificateBookingClass();
   console.log(infoBooking);
   infoBooking.idRoom = parseInt(document.getElementById("idroom").value);
@@ -335,10 +326,7 @@ form.addEventListener("submit", async (event) => {
     );
     if (result.ok) {
       console.log("Booking modificate successfully");
-      alert("Reserva modificadas exitosamente.");
-      setTimeout(() => {
-        window.location.href = "../mibooking-page/index.html";
-      });
+      window.location.href = "../mibooking-page/index.html";
     }
   } catch (error) {
     console.log(error);

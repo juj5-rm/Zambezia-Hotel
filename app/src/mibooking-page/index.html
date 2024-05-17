@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../home-page/styles.css" />
     <link rel="stylesheet" href="../styles/navBar.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/loader.css" />
     <link rel="stylesheet" href="./stylesMyBooking.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
@@ -56,10 +57,34 @@
     </nav>
     <div class="fondoNavbar"></div>
     <!--contenido pagina-->
-    <div class="viewSpace">
+    <div class="viewSpace" id="vistaTablaReservas">
       <div class="containerViewBookings">
-        <div class="containerBookings">
-          <h1>Mis reservas</h1>
+        <h1>Mis reservas</h1>
+        <table id="BookingsView">
+          <thead>
+            <tr>
+              <th>ID Reserva</th>
+              <th>Fecha de llegada</th>
+              <th>Fecha de salida</th>
+              <th>Habitación</th>
+              <th>Número de habitación</th>
+              <th id="actionColumn">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="noResults">
+              <td colspan="6">
+                <i class="fa-solid fa-magnifying-glass"></i><br />
+                Tus reservas aparecerán aquí.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-booking">
+          <a href="../booking-page/index.html" title="Reservar ahora!">
+            <i class="fa-regular fa-calendar-plus"></i>
+            <span class="btn-text">Nueva Reserva</span>
+          </a>
         </div>
       </div>
     </div>
@@ -134,6 +159,10 @@
           </div>
         </form>
       </div>
+    </div>
+    <!--loader-->
+    <div class="loaderDiv" id="loader">
+      <span class="loader"></span>
     </div>
     <!--footer-->
     <footer id="footer" class="Footer">

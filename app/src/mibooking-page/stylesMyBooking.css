@@ -16,47 +16,16 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow: scroll;
     justify-content: center;
     text-align: center;
     background-color: #ffffff;
-    border-radius: 50px;
-    width: 90%;
+    width: 100%;
     height: fit-content;
     padding: 30px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
 }
 
-.booking {
-    font-size: 30px;
-    text-align: center;
-    padding: 20px;
-    background-color: #adadad;
-    border-radius: 50px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
-    color: #01161e;
-    width: 100%;
-}
-
-.booking h3 {
-    font-size: 25px;
-    text-align: center;
-    border-bottom: 3px solid #9f9d9f;
-}
-
-.booking p {
-    font-size: 18px;
-    text-align: center;
-    padding: 5px;
-}
-
-.booking h5 {
-    font-size: 20px;
-    text-align: center;
-    color: #124559;
-}
-
-.booking button {
+#BookingsView button {
     font-size: 20px;
     text-align: center;
     padding: 10px;
@@ -64,10 +33,66 @@
     color: #ffffff;
     border: none;
     border-radius: 50px;
-    margin: 10px;
+    margin: 3px;
     cursor: pointer;
 }
 
+#BookingsView {
+    width: 100%;
+    margin: 20px;    
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+thead th {
+    background-color: #e4e4e4;
+    font-size: 16px;
+    height: 15px;
+    padding: 10px;
+}
+.noResults {
+    height: 200px;
+    font-size: 20px;
+    color: #01161e;
+}
+
+.noResults i {
+    font-size: 50px;
+    color: #01161e;
+}
+
+#actionColumn {
+    border: none;
+}
+
+
+.btn-booking {
+    width: fit-content;
+    height: fit-content;
+    padding: 17px 20px;
+    background-color: #e4ca97;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+    font-size: 20px;
+    display: flex;
+    align-items: center;  
+  }
+
+  .btn-booking a {
+    text-decoration: none;    
+    color: #01161e;
+    display: flex;
+    align-items: center;
+    overflow: hidden;    
+    padding: 3px;
+    transition: all 0.6s ease-in-out; 
+  }
+
+  .btn-booking a .btn-text {
+    margin: 5px;
+  }
 
 .formSpace {
     display: none;
@@ -145,19 +170,6 @@ form .containerinput {
     background: #124559;
 }
 
-.containerinput select {
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
-}
-
-.containerinput select:focus {
-    border-color: #01161e;
-}
 
 #botonReserva {
     display: none;
@@ -165,7 +177,7 @@ form .containerinput {
     align-items: center;
     justify-content: center;
 }
-/*
+
 .automatic {
     display: none;
 }
@@ -173,7 +185,6 @@ form .containerinput {
 .hidden {
     display: none;
 }
-*/
 
 .containerinput p {
     font-size: 16px;
@@ -183,28 +194,6 @@ form .containerinput {
     transition: .5s;
 }
 
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 50%;
-    padding-right: 30px;
-
-}
-
-select option {
-    background-color: #124559;
-    color: white;
-    padding: 2px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0;
-}
 
 .errorp {
     color: red;
