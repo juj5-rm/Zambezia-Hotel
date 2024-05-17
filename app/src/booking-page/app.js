@@ -190,7 +190,7 @@ form.addEventListener("submit", async (event) => {
       console.log("Booking created successfully");
       alert("Reserva creada exitosamente.");
       setTimeout(() => {
-        window.location.href = "../home-page/index.html";
+        window.location.href = "../mibooking-page/index.html";
       });
     }
   } catch (error) {

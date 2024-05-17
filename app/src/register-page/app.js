@@ -31,17 +31,20 @@ form.addEventListener("submit", async (event) => {
     .value.toString();
   infoUser.adressUser = document.getElementById("adressUser").value;
   infoUser.passwordUser = document.getElementById("passwordUser").value;
-  infoUser.typeUser = "Usuario";
+  infoUser.typeUser = "client";
 
   console.log(infoUser);
   try {
-    const result = await fetch("https://q4l2x4sw-3000.use2.devtunnels.ms/createUser ", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(infoUser),
-    });
+    const result = await fetch(
+      "https://q4l2x4sw-3000.use2.devtunnels.ms/createUser ",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(infoUser),
+      }
+    );
     if (result.ok) {
       console.log("User created successfully");
       alert("Usuario creado exitosamente. Por favor, inicia sesión.");

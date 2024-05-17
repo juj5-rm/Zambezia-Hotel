@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../home-page/styles.css" />
     <link rel="stylesheet" href="../styles/navBar.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="./stylesBooking.css" />
+    <link rel="stylesheet" href="./stylesMyBooking.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
       crossorigin="anonymous"
@@ -56,11 +56,18 @@
     </nav>
     <div class="fondoNavbar"></div>
     <!--contenido pagina-->
-    <!--reservar ahora-->
-    <div class="formSpace">
+    <div class="viewSpace">
+      <div class="containerViewBookings">
+        <div class="containerBookings">
+          <h1>Mis reservas</h1>
+        </div>
+      </div>
+    </div>
+    <!--modificar reserva-->
+    <div class="formSpace" id="modificacionReserva">
       <div class="formularioReserva">
-        <h2>Reserva</h2>
-        <form class="reservacion" method="post" id="bookingUser">
+        <h2>Modificar Reserva</h2>
+        <form class="reservacion" method="post" id="modificateBookingUser">
           <div class="containerinput">
             <p>Fecha de llegada</p>
             <input
@@ -83,16 +90,23 @@
             />
           </div>
           <p class="errorp" id="error2">Fecha no valida</p>
-          <div class="containerinput">
+          <!--botones-->
+          <button
+            type="button"
+            onclick="loadRoomIntoSelect()"
+            id="botonDisponibilidad"
+          >
+            verificar disponibilidad
+          </button>
+          <button type="submit" id="botonReserva">Modificar Reserva</button>
+          <!--elementos automaticos-->
+          <div class="containerinput hidden">
             <select name="typeRoom" id="typeroom" required>
               <option value="" disabled selected>
                 Selecciona el tipo de habitación
               </option>
             </select>
           </div>
-          <button type="button" onclick="showup()" id="botonDisponibilidad">
-            verificar disponibilidad
-          </button>
           <div class="containerinput hidden">
             <input
               type="number"
@@ -102,14 +116,22 @@
               required
             />
           </div>
-          <div class="containerinput automatic" id="idRoom">
+          <div class="containerinput hidden">
+            <input
+              type="number"
+              name="idBooking"
+              id="modificateIdBooking"
+              placeholder="id reserva"
+              required
+            />
+          </div>
+          <div class="containerinput hidden" id="idRoom">
             <select name="idRoom" id="idroom" required>
               <option value="" disabled selected>
                 Selecciona el numero de habitacion
               </option>
             </select>
           </div>
-          <button type="submit" id="botonReserva">Reserva</button>
         </form>
       </div>
     </div>
@@ -166,8 +188,7 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="./app.js"></script>
     <script type="module" src="../login-page/verifyUser.js"></script>
-    <script type="module" src="./loginData.js"></script>
-    <script src="./app.js"></script>
   </body>
 </html>

@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.viewSpace {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 0;
+    padding: 30px;
+}
+
+.containerViewBookings {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    width: 90%;
+    height: fit-content;
+    padding: 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.booking {
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #adadad;
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+    color: #01161e;
+    width: 100%;
+}
+
+.booking h3 {
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 3px solid #9f9d9f;
+}
+
+.booking p {
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+}
+
+.booking h5 {
+    font-size: 20px;
+    text-align: center;
+    color: #124559;
+}
+
+.booking button {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #124559;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+.formSpace {
+    display: none;
+    align-items: center;
+    justify-content: center; 
+    margin: 0;
+    padding: 30px;
+}
+
+.formularioReserva {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    width: 500px;
+    height: fit-content;
+    padding: 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.formularioReserva h2 {
+    font-size: 30px;
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 3px solid #9f9d9f;
+}
+
+.formularioReserva form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.containerinput {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+}
+
+form .containerinput {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.containerinput input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.containerinput input:focus {
+    border-color: #01161e;
+}
+
+#botonReserva, #botonDisponibilidad {
+    width: 100%;
+    height: 50px;
+    background: #01161e;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+#botonReserva:hover, #botonDisponibilidad:hover {
+    background: #124559;
+}
+
+.containerinput select {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.containerinput select:focus {
+    border-color: #01161e;
+}
+
+#botonReserva {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*
+.automatic {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+*/
+
+.containerinput p {
+    font-size: 16px;
+    color: #01161e;
+    margin-right: auto;
+    pointer-events: none;
+    transition: .5s;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+    padding-right: 30px;
+
+}
+
+select option {
+    background-color: #124559;
+    color: white;
+    padding: 2px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+}
+
+.errorp {
+    color: red;
+    font-size: 16px;
+    display: none;
+}

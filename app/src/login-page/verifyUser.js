@@ -32,7 +32,7 @@ dialog.addEventListener("mouseout", () => {
 
 // Agregar eventos a los botones dentro del diálogo
 document.getElementById("reservationsButton").addEventListener("click", () => {
-  window.location.href = "../booking-page/index.html";
+  window.location.href = "../mibooking-page/index.html";
   dialog.style.display = "none";
 });
 
@@ -40,4 +40,3 @@ document.getElementById("logoutButton").addEventListener("click", () => {
   setUserData("", "", "", "");
   window.location.reload();
 });
-
