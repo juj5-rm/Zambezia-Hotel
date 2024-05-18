@@ -35,10 +35,18 @@ loginForm.addEventListener("submit", async (event) => {
         userDataResponse.lastNameUser,
         userDataResponse.typeUser
       );
+
+      alert("Sesión iniciada correctamente");
+
+      // Redirigir según el tipo de usuario
+      if (userDataResponse.typeUser === "admin") {
+        window.location.href = "../admin-page/index.html";
+      } else {
+        window.location.href = "../home-page/index.html";
+      }
+    } else {
+      alert("Credenciales incorrectas. Por favor, inténtelo de nuevo.");
     }
-    alert("Sesion inciada correctamente");
-    // Redirigir a la página del perfil del usuario
-    window.location.href = "../home-page/index.html";
   } catch (error) {
     console.error("Error al iniciar sesión:", error);
   }

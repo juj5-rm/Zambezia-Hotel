@@ -1,0 +1,132 @@
+main {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse ;
+}
+
+th,
+td {
+  font-size: 14px;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid black;
+}
+
+th {
+   color: white; 
+   background-color: #0c4a63;
+}
+
+/* Estilos específicos para las tablas de datos */
+.dataTable {
+  margin-top: 20px;
+}
+
+.dataTable h2 {
+  margin-bottom: 10px;
+}
+
+.dataTable table {
+  margin-bottom: 0;
+}
+
+/* Estilos adaptados */
+#main-container {
+  margin: 150px auto;
+  width: 600px;
+}
+
+table {
+  background-color: white;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+tr:hover td {
+  background-color: #369681;
+  color: white;
+}
+
+.editFormSection {
+  position: absolute;
+  top: 0;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.editFormSection h2 {
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+
+.add-Button {
+  background-color: #0c4a63;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-form label {
+  font-weight: bold;
+}
+
+.edit-form input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.save-button {
+  background-color: #0c4a63;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.formulario {
+  position: relative;
+  width: 500px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+}
+
+.no-scroll {
+  overflow: hidden;
+  /*bloquear el scroll*/
+}
+
+.none {
+  display: none;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

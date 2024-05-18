@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zambezia Hotel</title>
+    <link rel="icon" type="image/x-icon" href="../../asset/img/logoHotel.png" />
+    <link rel="stylesheet" href="../home-page/styles.css" />
+    <link rel="stylesheet" href="../styles/navBar.css" />
+    <link rel="stylesheet" href="./stylesAdmin.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <script
+      src="https://kit.fontawesome.com/bcc237bb52.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav id="navBar" class="navbar">
+      <ul>
+        <div class="containerNavBar">
+          <li class="logoItemNavbar">
+            <img
+              src="../../asset/img/logoHotel.png"
+              alt="Logo Hotel"
+              class="logoNavbar"
+            />
+          </li>
+          <li>
+            <a href="../home-page/index.html"><b>ZAMBEZIA HOTEL</b></a>
+          </li>
+        </div>
+        <div class="containerNavBar containerLinks">
+          <li>
+            <a href="../contact-page/index.html"><b>Contactanos</b></a>
+          </li>
+          <li>
+            <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
+          </li>
+          <li class="loginNavBar">
+            <a id="logged-in"
+              ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
+            /></a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+    <div class="fondoNavbar"></div>
+
+    <main>
+      <section id="activeReservations" class="dataSection">
+        <h2>Reservas Activas</h2>
+        <div id="reservationsList"></div>
+      </section>
+
+      <section id="allRooms" class="dataSection">
+        <h2>Todas las Habitaciones</h2>
+        <div id="roomsList"></div>
+      </section>
+
+      <section id="roomTypes" class="dataSection">
+        <h2>Tipos de Habitación</h2>
+        <div id="roomTypesList"></div>
+      </section>
+
+      <section id="clients" class="dataSection">
+        <h2>Clientes</h2>
+        <div id="clientsList"></div>
+      </section>
+
+      <div id="editFormSection" class="editFormSection none">
+        <h2>Editar Registro</h2>
+        <div id="editForm"></div>
+      </div>
+    </main>
+
+    <footer id="footer" class="Footer">
+      <div class="containerFooter">
+        <div class="waterMark">
+          <p>Barú, Bolivar, Colombia</p>
+          <p>hotelzambezia@gmail.com</p>
+          <p>+57 3405252 EXT 100</p>
+        </div>
+        <div class="redescopy">
+          <div class="redes">
+            <ul class="siguenos">
+              <li>
+                <a href="https://www.facebook.com/" target="_blank"
+                  ><i class="fa-brands fa-square-facebook redesfooter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/?lang=en" target="_blank"
+                  ><i class="fa-brands fa-square-x-twitter redesfooter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank"
+                  ><i class="fa-brands fa-square-instagram redesfooter"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <p id="copyright">Copyright © 2024 Zambezia Hotel</p>
+        </div>
+        <div class="contentFooter">
+          <dl class="legalinfo">
+            <dt>
+              <b>Informacion legal</b>
+            </dt>
+            <dd><br /></dd>
+            <dd><a href="#">Politica de privacidad</a></dd>
+            <dd><a href="#">Terminos y condiciones</a></dd>
+            <dd><a href="#">Politica de cookies</a></dd>
+          </dl>
+          <dl class="webnav">
+            <dt><b>Mapa del sitio</b></dt>
+            <dd><br /></dd>
+            <dd><a href="../home-page/index.html">Inicio</a></dd>
+            <dd>servicios</dd>
+            <dd>Habitaciones</dd>
+            <dd><a href="../contact-page/index.html">Contactanos</a></dd>
+            <dd><a href="../about-page/index.html">Conocenos</a></dd>
+            <dd><a href="../booking-page/index.html">Reservar</a></dd>
+          </dl>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="../login-page/verifyUser.js"></script>
+  </body>
+</html>
