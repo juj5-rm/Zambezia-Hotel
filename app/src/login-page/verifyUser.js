@@ -3,6 +3,7 @@ import { getUserData, setUserData } from "./userData.js";
 const dialog = document.getElementById("dialog");
 const userData = getUserData();
 console.log(userData);
+document.getElementById("logged-in").style.cursor = "pointer";
 
 document.getElementById("logged-in").addEventListener("click", async () => {
   try {
@@ -54,7 +55,6 @@ document.getElementById("logoutButton").addEventListener("click", () => {
 
 document.getElementById("deleteUserButton").addEventListener("click", () => {
   deleteUser();
-  setUserData("", "", "", "");
   window.location.reload();
   window.location.href = "../home-page/index.html";
 });
@@ -76,6 +76,6 @@ async function deleteUser() {
     window.location.reload(); // Recargar la página
   } catch (error) {
     console.log(error);
-    window.alert("Hubo un error al eliminar la reserva: " + error.message);
+    //window.alert("Hubo un error al eliminar la reserva: " + error.message);
   }
 }
