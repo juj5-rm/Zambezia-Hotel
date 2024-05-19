@@ -440,7 +440,7 @@ async function addRecord(formData, entityType) {
         if (response.ok) {
             console.log("Registro actualizado exitosamente");
             alert("Registro actualizado exitosamente.");
-           // location.reload();
+            location.reload();
         }
     } catch (error) {
         console.error("Error al actualizar el registro:", error);
