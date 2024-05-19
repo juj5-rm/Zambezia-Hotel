@@ -1,11 +1,12 @@
-function renderTable(data, targetElement) {
+// Function to render a table with data and actions
+function renderTable(data, targetElement, entityType) {
   const containerDiv = document.createElement("div");
 
   const addButton = document.createElement("button");
   addButton.textContent = "Agregar";
   addButton.classList.add("add-Button");
   addButton.onclick = function () {
-      console.log("Agregar nueva entrada");
+      showAddForm(entityType);
   };
   containerDiv.appendChild(addButton);
 
@@ -39,7 +40,7 @@ function renderTable(data, targetElement) {
           editButton.textContent = "Editar";
           editButton.classList.add("edit-Button");
           editButton.onclick = function () {
-              showEditForm(item);
+              showEditForm(item, entityType);
           };
           actionsCell.appendChild(editButton);
           actionsCell.appendChild(document.createElement("br"));
@@ -47,6 +48,9 @@ function renderTable(data, targetElement) {
           const deleteButton = document.createElement("button");
           deleteButton.textContent = "Eliminar";
           deleteButton.classList.add("delete-Button");
+          deleteButton.onclick = function () {
+              deleteRecord(item.id, entityType);
+          };
           actionsCell.appendChild(deleteButton);
           actionsCell.appendChild(document.createElement("br"));
       });
@@ -57,7 +61,8 @@ function renderTable(data, targetElement) {
   targetElement.appendChild(containerDiv);
 }
 
-function showEditForm(data) {
+// Function to show the add form
+function showAddForm(entityType) {
   const editFormSection = document.getElementById("editFormSection");
   const formContainer = document.createElement("div");
   formContainer.classList.add("formulario");
@@ -66,35 +71,39 @@ function showEditForm(data) {
   closeButton.textContent = "X";
   closeButton.classList.add("close-button");
   closeButton.onclick = function () {
-    editFormSection.classList.add("none");
-    document.body.classList.remove("no-scroll");
+      editFormSection.classList.add("none");
+      document.body.classList.remove("no-scroll");
   };
   formContainer.appendChild(closeButton);
 
   const formTitle = document.createElement("h1");
-  formTitle.textContent = "Editar Registro";
+  formTitle.textContent = "Agregar Registro";
   formContainer.appendChild(formTitle);
 
   const formElement = document.createElement("form");
 
-  for (const key in data) {
-    const fieldContainer = document.createElement("div");
-    fieldContainer.classList.add(key.includes("password") ? "password" : "username");
+  const fields = getFieldsForEntity(entityType);
+  fields.forEach((field) => {
+      const fieldContainer = document.createElement("div");
+      fieldContainer.classList.add(field.includes("password") ? "password" : "username");
 
-    const inputElement = document.createElement("input");
-    inputElement.type = "text";
-    inputElement.name = key;
-    inputElement.value = data[key];
-    inputElement.placeholder = translateToSpanish(key);
+      const inputElement = document.createElement("input");
+      inputElement.type = "text";
+      inputElement.name = field;
+      inputElement.placeholder = translateToSpanish(field);
 
-    fieldContainer.appendChild(inputElement);
-    formElement.appendChild(fieldContainer);
-  }
+      fieldContainer.appendChild(inputElement);
+      formElement.appendChild(fieldContainer);
+  });
 
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
-  submitButton.textContent = "Guardar Cambios";
+  submitButton.textContent = "Guardar";
   submitButton.classList.add("save-button");
+  submitButton.onclick = function (event) {
+      event.preventDefault();
+      addRecord(new FormData(formElement), entityType);
+  };
   formElement.appendChild(submitButton);
 
   formContainer.appendChild(formElement);
@@ -105,66 +114,196 @@ function showEditForm(data) {
   editFormSection.classList.remove("none");
 }
 
-// Función para traducir los nombres de los campos al español
+// Function to show the edit form
+function showEditForm(data, entityType) {
+  const editFormSection = document.getElementById("editFormSection");
+  const formContainer = document.createElement("div");
+  formContainer.classList.add("formulario");
+
+  const closeButton = document.createElement("button");
+  closeButton.textContent = "X";
+  closeButton.classList.add("close-button");
+  closeButton.onclick = function () {
+      editFormSection.classList.add("none");
+      document.body.classList.remove("no-scroll");
+  };
+  formContainer.appendChild(closeButton);
+
+  const formTitle = document.createElement("h1");
+  formTitle.textContent = "Editar Registro";
+  formContainer.appendChild(formTitle);
+
+  const formElement = document.createElement("form");
+
+  for (const key in data) {
+      const fieldContainer = document.createElement("div");
+      fieldContainer.classList.add(key.includes("password") ? "password" : "username");
+
+      const inputElement = document.createElement("input");
+      inputElement.type = "text";
+      inputElement.name = key;
+      inputElement.value = data[key];
+      inputElement.placeholder = translateToSpanish(key);
+
+      fieldContainer.appendChild(inputElement);
+      formElement.appendChild(fieldContainer);
+  }
+
+  const submitButton = document.createElement("button");
+  submitButton.type = "submit";
+  submitButton.textContent = "Guardar Cambios";
+  submitButton.classList.add("save-button");
+  submitButton.onclick = function (event) {
+      event.preventDefault();
+      updateRecord(new FormData(formElement), entityType, data.id);
+  };
+  formElement.appendChild(submitButton);
+
+  formContainer.appendChild(formElement);
+  editFormSection.innerHTML = "";
+  editFormSection.appendChild(formContainer);
+  window.scrollTo(0, 0);
+  document.body.classList.add("no-scroll");
+  editFormSection.classList.remove("none");
+}
+
+// Function to translate field names to Spanish
 function translateToSpanish(key) {
-const translations = {
-  idBooking: "ID de Reserva",
-  idUser: "ID de Usuario",
-  idRoom: "ID de Habitación",
-  startDate: "Fecha de Inicio",
-  endDate: "Fecha de Fin",
-  createdAt: "Creado en",
-  updatedAt: "Actualizado en",
-  passwordUser: "Contraseña de Usuario",
-  nameUser: "Nombre de Usuario",
-  lastNameUser: "Apellido de Usuario",
-  documentUser: "Documento de Usuario",
-  emailUser: "Correo Electrónico de Usuario",
-  phoneNumberUser: "Número de Teléfono de Usuario",
-  adressUser: "Dirección de Usuario",
-  typeUser: "Tipo de Usuario",
-  price: "Precio",
-  maxCapacity: "Capacidad Máxima",
-  nameTypeRoom: "Nombre de Tipo de Habitación",
-  numberRoom: "Número de Habitación",
-  typeRoom: "Tipo de Habitación",
-  startUndisponibility: "Inicio de Indisponibilidad",
-  endUndisponibility: "Fin de Indisponibilidad",
-  restictions: "Restricciones",
-};
-return translations[key] || key;
+  const translations = {
+      idBooking: "ID de Reserva",
+      idUser: "ID de Usuario",
+      idRoom: "ID de Habitación",
+      startDate: "Fecha de Inicio",
+      endDate: "Fecha de Fin",
+      createdAt: "Creado en",
+      updatedAt: "Actualizado en",
+      passwordUser: "Contraseña de Usuario",
+      nameUser: "Nombre de Usuario",
+      lastNameUser: "Apellido de Usuario",
+      documentUser: "Documento de Usuario",
+      emailUser: "Correo Electrónico de Usuario",
+      phoneNumberUser: "Número de Teléfono de Usuario",
+      adressUser: "Dirección de Usuario",
+      typeUser: "Tipo de Usuario",
+      price: "Precio",
+      maxCapacity: "Capacidad Máxima",
+      nameTypeRoom: "Nombre de Tipo de Habitación",
+      numberRoom: "Número de Habitación",
+      typeRoom: "Tipo de Habitación",
+      startUndisponibility: "Inicio de Indisponibilidad",
+      endUndisponibility: "Fin de Indisponibilidad",
+      restictions: "Restricciones",
+  };
+  return translations[key] || key;
 }
 
-async function fetchData(url, targetId) {
-try {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("La respuesta de la red no fue exitosa");
+// Function to get fields for a specific entity type
+function getFieldsForEntity(entityType) {
+  const fields = {
+      bookings: ["idUser", "idRoom", "startDate", "endDate"],
+      rooms: ["numberRoom", "typeRoom", "price", "maxCapacity"],
+      typeRooms: ["nameTypeRoom"],
+      clients: ["nameUser", "lastNameUser", "documentUser", "emailUser", "phoneNumberUser", "adressUser", "typeUser"],
+  };
+  return fields[entityType] || [];
+}
+
+// Function to fetch data from the API and render the table
+async function fetchData(url, targetId, entityType) {
+  try {
+      const response = await fetch(url);
+      if (!response.ok) {
+          throw new Error("La respuesta de la red no fue exitosa");
+      }
+      const data = await response.json();
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+          renderTable(data, targetElement, entityType);
+      }
+  } catch (error) {
+      console.error("Error al obtener los datos:", error);
   }
-  const data = await response.json();
-  const targetElement = document.getElementById(targetId);
-  if (targetElement) {
-    renderTable(data, targetElement);
+}
+
+// Function to add a new record
+async function addRecord(formData, entityType) {
+  const urlMap = {
+      bookings: "https://q4l2x4sw-3000.use2.devtunnels.ms/bookings",
+      rooms: "https://q4l2x4sw-3000.use2.devtunnels.ms/rooms",
+      typeRooms: "https://q4l2x4sw-3000.use2.devtunnels.ms/typeRooms",
+      clients: "https://q4l2x4sw-3000.use2.devtunnels.ms/clients",
+  };
+  const url = urlMap[entityType];
+  try {
+      const response = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(Object.fromEntries(formData)),
+          headers: {
+              "Content-Type": "application/json"
+          }
+      });
+      if (response.ok) {
+          console.log("Registro agregado exitosamente");
+          alert("Registro agregado exitosamente.");
+          location.reload();
+      }
+  } catch (error) {
+      console.error("Error al agregar el registro:", error);
   }
-} catch (error) {
-  console.error("Error al obtener los datos:", error);
-}
 }
 
-// Obtener reservas activas y mostrarlas
-fetchData(
-"https://q4l2x4sw-3000.use2.devtunnels.ms/getBookings",
-"reservationsList"
-);
+// Function to update a record
+async function updateRecord(formData, entityType, id) {
+  const urlMap = {
+      bookings: `https://q4l2x4sw-3000.use2.devtunnels.ms/bookings/${id}`,
+      rooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/rooms/${id}`,
+      typeRooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/typeRooms/${id}`,
+      clients: `https://q4l2x4sw-3000.use2.devtunnels.ms/clients/${id}`,
+  };
+  const url = urlMap[entityType];
+  try {
+      const response = await fetch(url, {
+          method: "PUT",
+          body: JSON.stringify(Object.fromEntries(formData)),
+          headers: {
+              "Content-Type": "application/json"
+          }
+      });
+      if (response.ok) {
+          console.log("Registro actualizado exitosamente");
+          alert("Registro actualizado exitosamente.");
+          location.reload();
+      }
+  } catch (error) {
+      console.error("Error al actualizar el registro:", error);
+  }
+}
 
-// Obtener todas las habitaciones y mostrarlas
-fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getRooms", "roomsList");
+// Function to delete a record
+async function deleteRecord(id, entityType) {
+  const urlMap = {
+      bookings: `https://q4l2x4sw-3000.use2.devtunnels.ms/bookings/${id}`,
+      rooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/rooms/${id}`,
+      typeRooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/typeRooms/${id}`,
+      clients: `https://q4l2x4sw-3000.use2.devtunnels.ms/clients/${id}`,
+  };
+  const url = urlMap[entityType];
+  try {
+      const response = await fetch(url, {
+          method: "DELETE",
+      });
+      if (response.ok) {
+          console.log("Registro eliminado exitosamente");
+          alert("Registro eliminado exitosamente.");
+          location.reload();
+      }
+  } catch (error) {
+      console.error("Error al eliminar el registro:", error);
+  }
+}
 
-// Obtener todos los tipos de habitación y mostrarlos
-fetchData(
-"https://q4l2x4sw-3000.use2.devtunnels.ms/getTypeRooms",
-"roomTypesList"
-);
-
-// Obtener todos los clientes y mostrarlos
-fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getClients", "clientsList");
+// Fetch and render data for each section
+fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getBookings", "reservationsList", "bookings");
+fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getRooms", "roomsList", "rooms");
+fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getTypeRooms", "roomTypesList", "typeRooms");
+fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getClients", "clientsList", "clients");
