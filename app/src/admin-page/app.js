@@ -327,29 +327,29 @@ function showAddForm(entityType) {
 // Function to translate field names to Spanish
 function translateToSpanish(key) {
   const translations = {
-      idBooking: "ID de Reserva",
-      idUser: "ID de Usuario",
-      idRoom: "ID de Habitación",
-      startDate: "Fecha de Inicio",
-      endDate: "Fecha de Fin",
-      createdAt: "Creado en",
-      updatedAt: "Actualizado en",
-      passwordUser: "Contraseña de Usuario",
-      nameUser: "Nombre de Usuario",
-      lastNameUser: "Apellido de Usuario",
-      documentUser: "Documento de Usuario",
-      emailUser: "Correo Electrónico de Usuario",
-      phoneNumberUser: "Número de Teléfono de Usuario",
-      adressUser: "Dirección de Usuario",
-      typeUser: "Tipo de Usuario",
-      price: "Precio",
-      maxCapacity: "Capacidad Máxima",
-      nameTypeRoom: "Nombre de Tipo de Habitación",
-      numberRoom: "Número de Habitación",
-      typeRoom: "Tipo de Habitación",
-      startUndisponibility: "Inicio de Indisponibilidad",
-      endUndisponibility: "Fin de Indisponibilidad",
-      restictions: "Restricciones",
+    idBooking: "ID de Reserva",
+    idUser: "ID de Usuario",
+    idRoom: "ID de Habitación",
+    startDate: "Fecha de Inicio",
+    endDate: "Fecha de Fin",
+    createdAt: "Creado en",
+    updatedAt: "Actualizado en",
+    passwordUser: "Contraseña de Usuario",
+    nameUser: "Nombre de Usuario",
+    lastNameUser: "Apellido de Usuario",
+    documentUser: "Documento de Usuario",
+    emailUser: "Correo Electrónico de Usuario",
+    phoneNumberUser: "Número de Teléfono de Usuario",
+    adressUser: "Dirección de Usuario",
+    typeUser: "Tipo de Usuario",
+    price: "Precio",
+    maxCapacity: "Capacidad Máxima",
+    nameTypeRoom: "Nombre de Tipo de Habitación",
+    numberRoom: "Número de Habitación",
+    typeRoom: "Tipo de Habitación",
+    startUndisponibility: "Inicio de Indisponibilidad",
+    endUndisponibility: "Fin de Indisponibilidad",
+    restictions: "Restricciones",
   };
   return translations[key] || key;
 }
@@ -357,10 +357,18 @@ function translateToSpanish(key) {
 // Function to get fields for a specific entity type
 function getFieldsForEntity(entityType) {
   const fields = {
-      bookings: ["idUser", "idRoom", "startDate", "endDate"],
-      rooms: ["numberRoom", "typeRoom", "price", "maxCapacity"],
-      typeRooms: ["nameTypeRoom"],
-      clients: ["nameUser", "lastNameUser", "documentUser", "emailUser", "phoneNumberUser", "adressUser", "typeUser"],
+    bookings: ["idUser", "idRoom", "startDate", "endDate"],
+    rooms: ["numberRoom", "typeRoom", "price", "maxCapacity"],
+    typeRooms: ["nameTypeRoom"],
+    clients: [
+      "nameUser",
+      "lastNameUser",
+      "documentUser",
+      "emailUser",
+      "phoneNumberUser",
+      "adressUser",
+      "typeUser",
+    ],
   };
   return fields[entityType] || [];
 }
@@ -368,17 +376,17 @@ function getFieldsForEntity(entityType) {
 // Function to fetch data from the API and render the table
 async function fetchData(url, targetId, entityType) {
   try {
-      const response = await fetch(url);
-      if (!response.ok) {
-          throw new Error("La respuesta de la red no fue exitosa");
-      }
-      const data = await response.json();
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-          renderTable(data, targetElement, entityType);
-      }
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("La respuesta de la red no fue exitosa");
+    }
+    const data = await response.json();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      renderTable(data, targetElement, entityType);
+    }
   } catch (error) {
-      console.error("Error al obtener los datos:", error);
+    console.error("Error al obtener los datos:", error);
   }
 }
 async function addRecord(formData, entityType) {
@@ -464,7 +472,48 @@ async function addRecord(formData, entityType) {
 
 
 // Fetch and render data for each section
-fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getBookings", "reservationsList", "bookings");
-fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getRooms", "roomsList", "rooms");
-fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getTypeRooms", "roomTypesList", "typeRooms");
-fetchData("https://q4l2x4sw-3000.use2.devtunnels.ms/getClients", "clientsList", "clients");
+fetchData(
+  "https://q4l2x4sw-3000.use2.devtunnels.ms/getBookings",
+  "reservationsList",
+  "bookings"
+);
+fetchData(
+  "https://q4l2x4sw-3000.use2.devtunnels.ms/getRooms",
+  "roomsList",
+  "rooms"
+);
+fetchData(
+  "https://q4l2x4sw-3000.use2.devtunnels.ms/getTypeRooms",
+  "roomTypesList",
+  "typeRooms"
+);
+fetchData(
+  "https://q4l2x4sw-3000.use2.devtunnels.ms/getClients",
+  "clientsList",
+  "clients"
+);
+
+// Espera a que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", function () {
+  const servicios = document.querySelectorAll(".gridservicios .tabla");
+  const descripciones = document.querySelectorAll("main .dataSection");
+
+  // Función para reiniciar colores y ocultar todas las descripciones
+  function resetAll() {
+    servicios.forEach(
+      (servicio) => (servicio.style.backgroundColor = "#ffffff")
+    );
+    descripciones.forEach(
+      (descripcion) => (descripcion.style.display = "none")
+    );
+  }
+
+  // Añadir el evento de clic a cada servicio
+  servicios.forEach((servicio, index) => {
+    servicio.addEventListener("click", function () {
+      resetAll(); // Reiniciar todos los estilos y descripciones
+      this.style.backgroundColor = "#c7b691"; // Cambiar color del servicio clickeado
+      descripciones[index].style.display = "flex"; // Mostrar la descripción correspondiente
+    });
+  });
+});

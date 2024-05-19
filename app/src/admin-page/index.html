@@ -40,14 +40,42 @@
             <a id="logged-in"
               ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
             /></a>
+            <div id="dialog" class="box" style="display: none" ;>
+              <button id="adminButton" class="buttonMenu">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Administrador
+              </button>
+              <button id="reservationsButton" class="buttonMenu">
+                <i class="fa-regular fa-square-check"></i>
+                Mis reservas
+              </button>
+              <button class="buttonMenu" id="logoutButton">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Cerrar sesión
+              </button>
+            </div>
           </li>
         </div>
       </ul>
     </nav>
     <div class="fondoNavbar"></div>
-
+    <!--contenido-->
+    <div class="gridservicios">
+      <div class="tabla" id="tablalink1">
+        <h2>Reservas Activas</h2>
+      </div>
+      <div class="tabla" id="tablalink2">
+        <h2>Habitaciones</h2>
+      </div>
+      <div class="tabla" id="tablalink3">
+        <h2>Tipos de Habitación</h2>
+      </div>
+      <div class="tabla" id="tablalink4">
+        <h2>Clientes</h2>
+      </div>
+    </div>
     <main>
-      <section id="activeReservations" class="dataSection">
+      <section id="activeReservations" class="dataSection active">
         <h2>Reservas Activas</h2>
         <div id="reservationsList"></div>
       </section>
@@ -72,7 +100,7 @@
         <div id="editForm"></div>
       </div>
     </main>
-
+    <!--footer-->
     <footer id="footer" class="Footer">
       <div class="containerFooter">
         <div class="waterMark">
@@ -116,7 +144,9 @@
             <dt><b>Mapa del sitio</b></dt>
             <dd><br /></dd>
             <dd><a href="../home-page/index.html">Inicio</a></dd>
-            <dd>servicios</dd>
+            <dd>
+              <a href="../home-page/index.html#ServiciosBox">servicios</a>
+            </dd>
             <dd>Habitaciones</dd>
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
             <dd><a href="../about-page/index.html">Conocenos</a></dd>
@@ -128,5 +158,6 @@
 
     <script type="module" src="./app.js"></script>
     <script type="module" src="../login-page/verifyUser.js"></script>
+    <script type="module" src="../login-page/userData.js"></script>
   </body>
 </html>

@@ -37,13 +37,7 @@ loginForm.addEventListener("submit", async (event) => {
       );
 
       alert("Sesión iniciada correctamente");
-
-      // Redirigir según el tipo de usuario
-      if (userDataResponse.typeUser === "admin") {
-        window.location.href = "../admin-page/index.html";
-      } else {
         window.location.href = "../home-page/index.html";
-      }
     } else {
       alert("Credenciales incorrectas. Por favor, inténtelo de nuevo.");
     }
