@@ -12,7 +12,7 @@ ul {
   align-items: center;
   list-style-type: none;
   margin: 0;
-  padding: 5px;
+  padding: 4px;
   font-size: 20px;
 }
 
@@ -44,7 +44,7 @@ li a {
 }
 
 .logoNavbar {
-  width: 90px;
+  width: 70px;
 }
 
 .containerLinks li a {
