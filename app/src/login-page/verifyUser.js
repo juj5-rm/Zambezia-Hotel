@@ -53,11 +53,13 @@ document.getElementById("logoutButton").addEventListener("click", () => {
   window.location.href = "../home-page/index.html";
 });
 
-document.getElementById("deleteUserButton").addEventListener("click", () => {
-  deleteUser();
-  window.location.reload();
-  window.location.href = "../home-page/index.html";
-});
+document
+  .getElementById("deleteUserButton")
+  .addEventListener("click", async () => {
+    await deleteUser();
+    setUserData("", "", "", "");
+    window.location.href = "../home-page/index.html";
+  });
 
 async function deleteUser() {
   try {
@@ -75,7 +77,6 @@ async function deleteUser() {
     const data = await response.json();
     window.location.reload(); // Recargar la página
   } catch (error) {
-    console.log(error);
-    //window.alert("Hubo un error al eliminar la reserva: " + error.message);
+    window.alert("Hubo un error al eliminar la reserva: " + error.message);
   }
 }
