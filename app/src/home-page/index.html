@@ -43,6 +43,14 @@
               ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
             /></a>
             <div id="dialog" class="box" style="display: none" ;>
+              <button id="adminButton" class="buttonMenu">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Administrador
+              </button>
+              <button id="deleteUserButton" class="buttonMenu">
+                <i class="fa-solid fa-user-minus"></i>
+                Eliminar Cuenta
+                </button>
               <button id="reservationsButton" class="buttonMenu">
                 <i class="fa-regular fa-square-check"></i>
                 Mis reservas
@@ -57,6 +65,12 @@
       </ul>
     </nav>
     <div class="fondoNavbar"></div>
+    <!--titulo-->
+    <div class="titulo">
+      <h1>Descubre Zambezia</h1>
+      <h2>Donde la Elegancia Se Encuentra con la Naturaleza</h2>
+    </div>
+    <!--carrusel-->
     <div class="carrusel">
       <div class="itemCarrusel" id="slider1">
         <div class="tarjetaCarrusel" id="imagen1">
@@ -198,7 +212,7 @@
       </p>
     </div>
     <!--servicios-->
-    <div class="servicios">
+    <div class="servicios" id="ServiciosBox">
       <h2>Nuestros Servicios</h2>
       <h3>
         ¡Bienvenido a la sección de servicios exclusivos de Zambezia Hotel!
@@ -211,17 +225,131 @@
         ¡Explore y disfrute al máximo su estancia con nosotros!
       </p>
       <div class="gridservicios">
-        <div class="servicio">
-          <h2>Restaurante de servicio buffet</h2>
+        <div class="servicio active" id="serviciolink1">
+          <h2>Servicios de Hospedaje:</h2>
         </div>
-        <div class="servicio">
-          <h2>Restaurante de servicio buffet</h2>
+        <div class="servicio" id="serviciolink2">
+          <h2>Entretenimiento y Recreación:</h2>
         </div>
-        <div class="servicio">
-          <h2>Restaurante de servicio buffet</h2>
+        <div class="servicio" id="serviciolink3">
+          <h2>Conectividad y Comodidades:</h2>
         </div>
-        <div class="servicio">
-          <h2>Restaurante de servicio buffet</h2>
+        <div class="servicio" id="serviciolink4">
+          <h2>Servicios Adicionales:</h2>
+        </div>
+      </div>
+      <div class="descripciones">
+        <div class="serviciodescripcion" id="descripcion1">
+          <h2>Servicios de Hospedaje:</h2>
+          <p>
+            En Zambezia Hotel, la comodidad y el bienestar de nuestros huéspedes
+            son nuestra prioridad. Descubra nuestras habitaciones y suites
+            diseñadas para ofrecerle una experiencia de descanso y relajación
+            inigualable. Desde habitaciones estándar hasta suites de lujo, cada
+            espacio ha sido diseñado para satisfacer sus necesidades y superar
+            sus expectativas.
+          </p>
+          <p>
+            Nuestro equipo de profesionales está a su disposición las 24 horas
+            del día para garantizar que su estancia sea perfecta. Desde el
+            momento de su llegada hasta su salida, nos esforzamos por brindarle
+            un servicio personalizado y atento, diseñado para hacer que se
+            sienta como en casa.
+          </p>
+          <ol class="listitems">
+            <li>Servicio de habitaciones.</li>
+            <li>Atención y servicio de recepción 24/7.</li>
+            <li>Estacionamiento privado y seguro.</li>
+            <li>Servicio de transporte al aeropuerto.</li>
+            <li>Servicio diario de limpieza de habitaciones.</li>
+            <li>Cajas de seguridad en las habitaciones.</li>
+            <li>Acceso facilitado mediante ascensores.</li>
+            <li>Restaurante de servicio buffet.</li>
+          </ol>
+        </div>
+        <div class="serviciodescripcion" id="descripcion2">
+          <h2>Entretenimiento y Recreación:</h2>
+          <p>
+            En Zambezia Hotel, la diversión y el entretenimiento están
+            garantizados. Descubra nuestras instalaciones y actividades
+            diseñadas para hacer de su estancia una experiencia inolvidable.
+            Desde nuestras piscinas y canchas deportivas hasta nuestras
+            actividades recreativas, cada detalle ha sido pensado para que
+            disfrute al máximo su tiempo con nosotros.
+          </p>
+          <p>
+            Nuestro equipo de animación está a su disposición para organizar
+            actividades y eventos especiales durante su estancia. Desde clases
+            de baile hasta torneos deportivos, siempre hay algo emocionante que
+            hacer en Zambezia Hotel. ¡Explore y disfrute al máximo su tiempo con
+            nosotros!
+          </p>
+          <ol class="listitems">
+            <li>Bar y lounge.</li>
+            <li>Área de recreación infantil.</li>
+            <li>Piscina al aire libre.</li>
+            <li>Spa y centro de bienestar.</li>
+            <li>
+              Instalaciones deportivas que incluyen canchas para diversas
+              disciplinas.
+            </li>
+            <li>Gimnasio equipado con maquinaria de última generación.</li>
+            <li>Amplias áreas verdes y jardines.</li>
+          </ol>
+        </div>
+        <div class="serviciodescripcion" id="descripcion3">
+          <h2>Conectividad y Comodidades:</h2>
+          <p>
+            En Zambezia Hotel, la conectividad y la comodidad son esenciales.
+            Descubra nuestras instalaciones y servicios diseñados para hacer su
+            estancia más placentera y productiva. Desde nuestras áreas de
+            trabajo hasta nuestras zonas de descanso, cada detalle ha sido
+            pensado para que se sienta como en casa.
+          </p>
+          <p>
+            Nuestro equipo de tecnología está a su disposición para garantizar
+            que su estancia sea perfecta. Desde el acceso a Internet de alta
+            velocidad hasta las facilidades de impresión y copiado, siempre
+            estamos listos para ayudarle. ¡Explore y disfrute al máximo su
+            tiempo con nosotros!
+          </p>
+          <ol class="listitems">
+            <li>Acceso a Internet inalámbrico (WiFi).</li>
+            <li>
+              Ambientes climatizados con aire acondicionado en todas las áreas
+              comunes y habitaciones.
+            </li>
+            <li>Secadores de pelo disponibles en las habitaciones.</li>
+            <li>
+              Admitimos mascotas (pet friendly) con comodidades especiales para
+              ellas.
+            </li>
+          </ol>
+        </div>
+        <div class="serviciodescripcion" id="descripcion4">
+          <h2>Servicios Adicionales:</h2>
+          <p>
+            En Zambezia Hotel, la excelencia y la innovación son nuestra
+            filosofía. Descubra nuestros servicios adicionales diseñados para
+            hacer su estancia más placentera y productiva. Desde nuestras
+            facilidades de negocios hasta nuestras opciones de transporte, cada
+            detalle ha sido pensado para que disfrute al máximo su tiempo con
+            nosotros.
+          </p>
+          <p>
+            Nuestro equipo de profesionales está a su disposición para
+            garantizar que su estancia sea perfecta. Desde el momento de su
+            llegada hasta su salida, nos esforzamos por brindarle un servicio
+            personalizado y atento, diseñado para hacer que se sienta como en
+            casa. ¡Explore y disfrute al máximo su tiempo con nosotros!
+          </p>
+          <ol class="listitems">
+            <li>Servicio de lavandería y tintorería.</li>
+            <li>Facilidades de negocios y salas de reuniones.</li>
+            <li>Asistencia médica y servicios de emergencia.</li>
+            <li>Facilidades para personas con movilidad reducida.</li>
+            <li>Alquiler de equipos y accesorios deportivos.</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -275,7 +403,7 @@
             <dt><b>Mapa del sitio</b></dt>
             <dd><br /></dd>
             <dd><a href="./index.html">Inicio</a></dd>
-            <dd>servicios</dd>
+            <dd><a href="#ServiciosBox">servicios</a></dd>
             <dd>Habitaciones</dd>
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
             <dd><a href="../about-page/index.html">Conocenos</a></dd>
