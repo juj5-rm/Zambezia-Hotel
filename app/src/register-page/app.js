@@ -9,7 +9,7 @@ class User {
   adressUser; //String
   typeUser; //String
   createdAt; //Date
-  updatedAt; //Date
+  updatedAt; //DateF
 }
 
 window.onload = function () {

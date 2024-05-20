@@ -1,10 +1,8 @@
-
-
 table {
   width: 100%;
   margin-bottom: 20px;
   margin-top: 20px;
-  border-collapse: collapse ;  
+  border-collapse: collapse;
   background-color: white;
   text-align: left;
 }
@@ -18,8 +16,8 @@ td {
 }
 
 th {
-   color: white; 
-   background-color: #0c4a63;
+  color: white;
+  background-color: #0c4a63;
 }
 
 /* Estilos específicos para las tablas de datos */
@@ -67,7 +65,9 @@ tr:hover td {
   padding: 0 0 20px 0;
 }
 
-.edit-Button,.delete-Button,.add-Button {
+.edit-Button,
+.delete-Button,
+.add-Button {
   background-color: #0c4a63;
   color: white;
   padding: 8px;
@@ -78,7 +78,7 @@ tr:hover td {
   align-self: flex-end;
   border: none;
   font-size: 25px;
-  box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
   align-items: center;
   justify-content: center;
 }
@@ -174,8 +174,8 @@ button i {
   cursor: pointer;
 }
 
-.tabla:hover  {
-  background-color: #c7b691;    
+.tabla:hover {
+  background-color: #c7b691;
 }
 
 .tabla.active {
@@ -213,5 +213,3 @@ button i {
   font-size: 50px;
   color: #01161e;
 }
-
-
