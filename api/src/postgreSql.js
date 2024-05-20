@@ -5,7 +5,6 @@ import { pool } from "../dataBase/connectionPostgreSql.js";
 const app = express();
 const PORT = 3000;
 
-
 app.use(express.json());
 app.use(cors());
 
@@ -507,14 +506,7 @@ app.get("/getBookings/:idUser", async (req, res) => {
 
   try {
     const result = await pool.query(
-      `SELECT b.*, r."numberRoom", tr."nameTypeRoom"
-       FROM public."booking" b
-       JOIN public."room" r ON b."idRoom" = r."idRoom"
-       JOIN public."typeRoom" tr ON tr."id" = r."typeRoom"
-       WHERE b."idUser" = $1
-         AND (r."startUndisponibility" IS NULL OR r."endUndisponibility" IS NULL
-              OR b."endDate" <= r."startUndisponibility" OR b."startDate" >= r."endUndisponibility")
-       ORDER BY b."idBooking" ASC;`,
+      'SELECT b.*,r."numberRoom",tr."nameTypeRoom" FROM public."booking" b JOIN public."room" r ON b."idRoom" = r."idRoom" JOIN public."typeRoom" tr ON tr."id"=r."typeRoom" WHERE b."idUser" =$1 ORDER BY b."idBooking" ASC;',
       [idUserParam]
     );
 
@@ -609,7 +601,18 @@ app.get(
 
     try {
       const result = await pool.query(
-        'SELECT * FROM public."room" WHERE "typeRoom" = $1 AND "idRoom" NOT IN (SELECT "idRoom" FROM public."booking" WHERE "startDate" < $3 AND "endDate" > $2)',
+        `SELECT * FROM public."room" 
+         WHERE "typeRoom" = $1 
+           AND "idRoom" NOT IN (
+             SELECT "idRoom" 
+             FROM public."booking" 
+             WHERE "startDate" < $3 AND "endDate" > $2
+           )
+           AND (
+             "startUndisponibility" IS NULL 
+             OR "endUndisponibility" IS NULL 
+             OR NOT ("startUndisponibility" < $3 AND "endUndisponibility" > $2)
+           )`,
         [idTypeRoomParam, startDateParam, endDateParam]
       );
 
