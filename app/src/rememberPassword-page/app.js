@@ -1,5 +1,11 @@
 const changePasswordForm = document.getElementById("changePasswordForm");
 
+window.onload = () => {
+  // Ocultar el loader
+  document.getElementById("loader").style.display = "none";
+  document.body.style.overflow = "auto";
+};
+
 changePasswordForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -10,6 +16,11 @@ changePasswordForm.addEventListener("submit", async (event) => {
 
   const email = document.getElementById("email").value;
   const newPassword = document.getElementById("newPassword").value;
+
+  // Mostrar el loader
+  document.getElementById("loader").style.display = "flex";
+  document.body.style.overflow = "hidden";
+
   try {
     const response = await fetch(
       "https://q4l2x4sw-3000.use2.devtunnels.ms/changePassword/" + email,
@@ -26,9 +37,6 @@ changePasswordForm.addEventListener("submit", async (event) => {
 
     if (response.ok) {
       console.log("Contraseña cambiada exitosamente");
-      alert(
-        "Contraseña cambiada exitosamente. Por favor, inicia sesión con tu nueva contraseña."
-      );
       window.location.href = "../login-page/index.html";
     } else {
       const errorData = await response.json();
@@ -41,6 +49,10 @@ changePasswordForm.addEventListener("submit", async (event) => {
     alert(
       "Hubo un error al cambiar la contraseña. Por favor, intenta de nuevo."
     );
+  } finally {
+    // Ocultar el loader
+    document.getElementById("loader").style.display = "none";
+    document.body.style.overflow = "auto";
   }
 });
 

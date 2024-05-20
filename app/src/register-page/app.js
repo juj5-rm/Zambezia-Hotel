@@ -12,13 +12,21 @@ class User {
   updatedAt; //Date
 }
 
+window.onload = function () {
+  // Ocultar el loader
+  document.getElementById("loader").style.display = "none";
+  document.body.style.overflow = "auto";
+};
+
 const form = document.getElementById("registerUser");
 form.addEventListener("submit", async (event) => {
   event.preventDefault(); // Evitar el envío del formulario por defecto
+
   if (!checkPasswordMatch()) {
     alert("Las contraseñas no coinciden. Por favor, inténtelo de nuevo.");
     return; // Detener el proceso si las contraseñas no coinciden
   }
+
   const infoUser = new User();
   infoUser.nameUser = document.getElementById("nameUser").value;
   infoUser.lastNameUser = document.getElementById("lastNameUser").value;
@@ -34,9 +42,14 @@ form.addEventListener("submit", async (event) => {
   infoUser.typeUser = "client";
 
   console.log(infoUser);
+
+  // Mostrar el loader
+  document.getElementById("loader").style.display = "flex";
+  document.body.style.overflow = "hidden";
+
   try {
     const result = await fetch(
-      "https://q4l2x4sw-3000.use2.devtunnels.ms/createUser ",
+      "https://q4l2x4sw-3000.use2.devtunnels.ms/createUser",
       {
         method: "POST",
         headers: {
@@ -45,15 +58,19 @@ form.addEventListener("submit", async (event) => {
         body: JSON.stringify(infoUser),
       }
     );
+
     if (result.ok) {
       console.log("User created successfully");
-      alert("Usuario creado exitosamente. Por favor, inicia sesión.");
       setTimeout(() => {
         window.location.href = "../login-page/index.html";
-      });
+      }, 1000);
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    // Ocultar el loader
+    document.getElementById("loader").style.display = "none";
+    document.body.style.overflow = "auto";
   }
 });
 

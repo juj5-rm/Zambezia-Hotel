@@ -3,7 +3,10 @@
 table {
   width: 100%;
   margin-bottom: 20px;
-  border-collapse: collapse ;
+  margin-top: 20px;
+  border-collapse: collapse ;  
+  background-color: white;
+  text-align: left;
 }
 
 th,
@@ -38,11 +41,6 @@ th {
   width: 600px;
 }
 
-table {
-  background-color: white;
-  text-align: left;
-}
-
 tr:nth-child(even) {
   background-color: #ddd;
 }
@@ -69,14 +67,31 @@ tr:hover td {
   padding: 0 0 20px 0;
 }
 
-.add-Button {
+.edit-Button,.delete-Button,.add-Button {
   background-color: #0c4a63;
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 50px;
   text-decoration: none;
-  margin: 20px 0;
-  display: inline-block;
+  margin: 1px;
+  cursor: pointer;
+  align-self: flex-end;
+  border: none;
+  font-size: 25px;
+  box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+  align-items: center;
+  justify-content: center;
+}
+
+button i {
+  font-size: 18px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .edit-form {
@@ -164,9 +179,39 @@ tr:hover td {
 }
 
 .tabla.active {
-  background-color: #e3dccd; /* Color al hacer clic */
+  background-color: #c7b691; /* Color al hacer clic */
 }
 
 .dataSection {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
 }
+
+#activeReservations {
+  display: flex;
+}
+
+.no-data-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #01161e;
+  padding: 10px;
+  width: 300%;
+  height: 200px;
+  margin: 20px;
+  background-color: #ffffff;
+  border-radius: 50px;
+}
+
+.no-data-message i {
+  font-size: 50px;
+  color: #01161e;
+}
+
+

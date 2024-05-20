@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/navBar.css" />
     <link rel="stylesheet" href="../styles/reserva.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/loader.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
       crossorigin="anonymous"
@@ -41,10 +42,11 @@
             <a id="logged-in"
               ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
             /></a>
-            <div id="dialog" class="box" style="display: none" ;>
+            <div id="dialog" class="box" style="display: none">
               <button id="adminButton" class="buttonMenu">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 Administrador
+              </button>
               <button id="reservationsButton" class="buttonMenu">
                 <i class="fa-regular fa-square-check"></i>
                 Mis reservas
@@ -154,6 +156,10 @@
         <span class="btn-text">Reservar ahora</span>
       </a>
     </div>
+    <!--loader-->
+    <div class="loaderDiv" id="loader">
+      <span class="loader"></span>
+    </div>
     <footer id="footer" class="Footer">
       <div class="containerFooter">
         <div class="waterMark">
@@ -200,7 +206,7 @@
             <dd>
               <a href="../home-page/index.html#ServiciosBox">servicios</a>
             </dd>
-            <dd>Habitaciones</dd>
+
             <dd><a href="./index.html">Contactanos</a></dd>
             <dd><a href="../about-page/index.html">Conocenos</a></dd>
             <dd><a href="../booking-page/index.html">Reservar</a></dd>

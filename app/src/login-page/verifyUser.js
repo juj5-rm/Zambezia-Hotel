@@ -54,13 +54,27 @@ document.getElementById("logoutButton").addEventListener("click", () => {
   window.location.href = "../home-page/index.html";
 });
 
-document
-  .getElementById("deleteUserButton")
-  .addEventListener("click", async () => {
-    await deleteUser();
-    setUserData("", "", "", "");
-    window.location.href = "../home-page/index.html";
-  });
+document.getElementById("deleteUserButton").addEventListener("click", () => {
+  showConfirmationDialog(
+    "¿Estás seguro de que deseas eliminar tu cuenta?",
+    async (confirmed) => {
+      if (confirmed) {
+        // Mostrar el loader
+        document.getElementById("loader").style.display = "flex";
+        document.body.style.overflow = "hidden";
+
+        await deleteUser();
+
+        // Ocultar el loader
+        document.getElementById("loader").style.display = "none";
+        document.body.style.overflow = "auto";
+
+        setUserData("", "", "", "");
+        window.location.href = "../home-page/index.html";
+      }
+    }
+  );
+});
 
 async function deleteUser() {
   try {
@@ -72,12 +86,45 @@ async function deleteUser() {
     );
 
     if (!response.ok) {
-      throw new Error("Error al eliminar la reserva");
+      throw new Error("Error al eliminar la cuenta");
     }
 
     const data = await response.json();
     window.location.reload(); // Recargar la página
   } catch (error) {
-    window.alert("Hubo un error al eliminar la reserva: " + error.message);
+    window.alert("Hubo un error al eliminar la cuenta: " + error.message);
   }
+}
+
+function showConfirmationDialog(message, callback) {
+  const confirmationDialog = document.createElement("div");
+  confirmationDialog.classList.add("confirmation-dialog");
+
+  const dialogBox = document.createElement("div");
+  dialogBox.classList.add("dialog-box");
+
+  const messageElement = document.createElement("p");
+  messageElement.textContent = message;
+
+  const yesButton = document.createElement("button");
+  yesButton.textContent = "Sí";
+  yesButton.classList.add("dialog-button");
+  yesButton.addEventListener("click", () => {
+    document.body.removeChild(confirmationDialog);
+    callback(true);
+  });
+
+  const noButton = document.createElement("button");
+  noButton.textContent = "No";
+  noButton.classList.add("dialog-button");
+  noButton.addEventListener("click", () => {
+    document.body.removeChild(confirmationDialog);
+    callback(false);
+  });
+
+  dialogBox.appendChild(messageElement);
+  dialogBox.appendChild(yesButton);
+  dialogBox.appendChild(noButton);
+  confirmationDialog.appendChild(dialogBox);
+  document.body.appendChild(confirmationDialog);
 }

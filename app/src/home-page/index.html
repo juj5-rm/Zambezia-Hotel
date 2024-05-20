@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styleshomepage.css" />
     <link rel="stylesheet" href="./styleshomecarrusel.css" />
     <link rel="stylesheet" href="../styles/reserva.css" />
+    <link rel="stylesheet" href="../styles/loader.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
       crossorigin="anonymous"
@@ -47,10 +48,6 @@
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 Administrador
               </button>
-              <button id="deleteUserButton" class="buttonMenu">
-                <i class="fa-solid fa-user-minus"></i>
-                Eliminar Cuenta
-              </button>
               <button id="reservationsButton" class="buttonMenu">
                 <i class="fa-regular fa-square-check"></i>
                 Mis reservas
@@ -58,6 +55,10 @@
               <button class="buttonMenu" id="logoutButton">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 Cerrar sesión
+              </button>
+              <button id="deleteUserButton" class="buttonMenu">
+                <i class="fa-solid fa-user-minus"></i>
+                Eliminar Cuenta
               </button>
             </div>
           </li>
@@ -353,6 +354,10 @@
         </div>
       </div>
     </div>
+    <!--loader-->
+    <div class="loaderDiv" id="loader">
+      <span class="loader"></span>
+    </div>
     <!--btn reservas and footer-->
     <div class="btn-booking">
       <a href="../booking-page/index.html" title="Reservar ahora!">
@@ -404,7 +409,7 @@
             <dd><br /></dd>
             <dd><a href="./index.html">Inicio</a></dd>
             <dd><a href="#ServiciosBox">servicios</a></dd>
-            <dd>Habitaciones</dd>
+
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
             <dd><a href="../about-page/index.html">Conocenos</a></dd>
             <dd><a href="../booking-page/index.html">Reservar</a></dd>

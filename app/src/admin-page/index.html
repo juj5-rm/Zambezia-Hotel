@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/navBar.css" />
     <link rel="stylesheet" href="./stylesAdmin.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/loader.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
       crossorigin="anonymous"
@@ -53,6 +54,10 @@
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 Cerrar sesión
               </button>
+              <button id="deleteUserButton" class="buttonMenu">
+                <i class="fa-solid fa-user-minus"></i>
+                Eliminar Cuenta
+              </button>
             </div>
           </li>
         </div>
@@ -61,7 +66,7 @@
     <div class="fondoNavbar"></div>
     <!--contenido-->
     <div class="gridservicios">
-      <div class="tabla" id="tablalink1">
+      <div class="tabla active" id="tablalink1">
         <h2>Reservas Activas</h2>
       </div>
       <div class="tabla" id="tablalink2">
@@ -75,7 +80,7 @@
       </div>
     </div>
     <main>
-      <section id="activeReservations" class="dataSection active">
+      <section id="activeReservations" class="dataSection">
         <h2>Reservas Activas</h2>
         <div id="reservationsList"></div>
       </section>
@@ -100,6 +105,10 @@
         <div id="editForm"></div>
       </div>
     </main>
+    <!--loader-->
+    <div class="loaderDiv" id="loader">
+      <span class="loader"></span>
+    </div>
     <!--footer-->
     <footer id="footer" class="Footer">
       <div class="containerFooter">
@@ -147,7 +156,7 @@
             <dd>
               <a href="../home-page/index.html#ServiciosBox">servicios</a>
             </dd>
-            <dd>Habitaciones</dd>
+
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
             <dd><a href="../about-page/index.html">Conocenos</a></dd>
             <dd><a href="../booking-page/index.html">Reservar</a></dd>

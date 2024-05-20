@@ -18,9 +18,15 @@ async function getRoomTypes() {
 async function loadRoomTypesIntoSelect() {
   // Get the select element
   var selectRoomType = document.getElementById("typeroom");
+  console.log(selectRoomType);
+
+  // Show loader
+  document.getElementById("loader").style.display = "flex";
+  document.body.style.overflow = "hidden";
 
   // Get room types
   var roomTypes = await getRoomTypes();
+
   // Iterate over room types and add options to the select
   roomTypes.forEach((typeRoom) => {
     var option = document.createElement("option");
@@ -28,6 +34,10 @@ async function loadRoomTypesIntoSelect() {
     option.textContent = typeRoom.nameTypeRoom;
     selectRoomType.appendChild(option);
   });
+
+  // Hide loader
+  document.getElementById("loader").style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 // Call the function to load room types into the select when the page loads
@@ -44,6 +54,11 @@ function showup() {
   if (campo1 !== "" && campo2 !== "" && campo3 !== "") {
     document.getElementById("botonDisponibilidad").style.display = "none";
     document.getElementById("botonReserva").style.display = "flex";
+
+    // Show loader
+    document.getElementById("loader").style.display = "flex";
+    document.body.style.overflow = "hidden";
+
     loadRoomIntoSelect();
   }
 }
@@ -124,7 +139,7 @@ async function getIdRoom(startDate, endDate, idTypeRoom) {
 
 document
   .getElementById("typeroom")
-  .addEventListener("change", loadRoomIntoSelect());
+  .addEventListener("change", loadRoomIntoSelect);
 
 // Function to load room types into the select element
 async function loadRoomIntoSelect() {
@@ -139,6 +154,10 @@ async function loadRoomIntoSelect() {
 
   // Limpiar opciones existentes en el select
   selectIdRoom.innerHTML = "";
+
+  // Hide loader if no rooms are available
+  document.getElementById("loader").style.display = "none";
+  document.body.style.overflow = "auto";
 
   if (rooms.length === 0) {
     window.alert(
@@ -155,6 +174,10 @@ async function loadRoomIntoSelect() {
       selectIdRoom.appendChild(option);
     });
   }
+
+  // Hide loader after options are loaded
+  document.getElementById("loader").style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 class Booking {
@@ -175,6 +198,11 @@ form.addEventListener("submit", async (event) => {
   infoBooking.endDate = document.getElementById("finishDateReservation").value;
 
   console.log(infoBooking);
+
+  // Show loader
+  document.getElementById("loader").style.display = "flex";
+  document.body.style.overflow = "hidden";
+
   try {
     const result = await fetch(
       "https://q4l2x4sw-3000.use2.devtunnels.ms/createBooking ",
@@ -188,12 +216,15 @@ form.addEventListener("submit", async (event) => {
     );
     if (result.ok) {
       console.log("Booking created successfully");
-      alert("Reserva creada exitosamente.");
       setTimeout(() => {
         window.location.href = "../mibooking-page/index.html";
       });
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    // Hide loader
+    document.getElementById("loader").style.display = "none";
+    document.body.style.overflow = "auto";
   }
 });

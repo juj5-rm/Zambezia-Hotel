@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../home-page/styles.css" />
     <link rel="stylesheet" href="../styles/navBar.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/loader.css" />
     <link rel="stylesheet" href="./stylesBooking.css" />
     <script
       src="https://kit.fontawesome.com/bcc237bb52.js"
@@ -52,6 +53,10 @@
               <button class="buttonMenu" id="logoutButton">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 Cerrar sesión
+              </button>
+              <button id="deleteUserButton" class="buttonMenu">
+                <i class="fa-solid fa-user-minus"></i>
+                Eliminar Cuenta
               </button>
             </div>
           </li>
@@ -117,6 +122,10 @@
         </form>
       </div>
     </div>
+    <!--loader-->
+    <div class="loaderDiv" id="loader">
+      <span class="loader"></span>
+    </div>
     <!--footer-->
     <footer id="footer" class="Footer">
       <div class="containerFooter">
@@ -164,7 +173,7 @@
             <dd>
               <a href="../home-page/index.html#ServiciosBox">servicios</a>
             </dd>
-            <dd>Habitaciones</dd>
+
             <dd><a href="../contact-page/index.html">Contactanos</a></dd>
             <dd><a href="../about-page/index.html">Conocenos</a></dd>
             <dd><a href="../booking-page/index.html">Reservar</a></dd>
