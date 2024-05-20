@@ -8,14 +8,14 @@
   background-color: #ffffff;
 }
 
-.content h2{
-    height: fit-content;
-    width: fit-content;
-    padding: 5px;
-    text-align: left;
-    border-bottom: 3px solid #e4ca97;
-    font-size: 30px;
-    align-items: center;
+.content h2 {
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+  text-align: left;
+  border-bottom: 3px solid #e4ca97;
+  font-size: 30px;
+  align-items: center;
 }
 
 .paragraf {
@@ -43,7 +43,7 @@
   margin-right: 30px;
   background-color: #e4ca97;
   border-radius: 50px;
-  box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
 }
 
 .contact dl {
@@ -53,7 +53,7 @@
 .contact dt {
   margin: 10px;
 }
-.paragraf p{
+.paragraf p {
   height: fit-content;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -61,8 +61,7 @@
   font-size: 17px;
 }
 
-
-.contenedorLogos {  
+.contenedorLogos {
   top: 50%;
   left: 50%;
   width: fit-content;
@@ -77,8 +76,8 @@
   margin: 20px;
   border-radius: 25%;
   padding: 15px;
-  box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
-  transition: .3 ease;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+  transition: 0.3 ease;
 }
 
 .contact a {
@@ -94,25 +93,19 @@
 .fa-facebook:hover {
   background-color: #4267b2;
   color: white;
-  box-shadow: 0 0 15px #4267b2,
-              0 0 45px #4267b2;
-
+  box-shadow: 0 0 15px #4267b2, 0 0 45px #4267b2;
 }
 
 .fa-x-twitter:hover {
   background-color: black;
   color: white;
-  box-shadow: 0 0 15px black,
-              0 0 45px black;
-
+  box-shadow: 0 0 15px black, 0 0 45px black;
 }
 
 .fa-instagram:hover {
   background-color: #dd2a7b;
   color: white;
-  box-shadow: 0 0 15px #dd2a7b,
-              0 0 45px #dd2a7b;
-
+  box-shadow: 0 0 15px #dd2a7b, 0 0 45px #dd2a7b;
 }
 
 .content form .campo {
@@ -138,7 +131,6 @@
   border-radius: 20px;
 }
 
-
 .content .btn-enviar {
   padding: 15px;
   font-size: 16px;
@@ -149,9 +141,8 @@
   color: black;
   cursor: pointer;
   transition: all 300ms ease;
-  box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
 }
-
 
 .contactForm {
   width: 370px;
@@ -164,7 +155,7 @@
   margin-bottom: 60px;
   margin-left: 30px;
   margin-right: 120px;
-  box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
 }
 
 .cuadricula {

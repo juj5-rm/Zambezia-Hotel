@@ -47,7 +47,8 @@ body {
   border-bottom: 1px solid white;
 }
 
-#adminButton, #deleteUserButton {
+#adminButton,
+#deleteUserButton {
   display: flex;
 }
 

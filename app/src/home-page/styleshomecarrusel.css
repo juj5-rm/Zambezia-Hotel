@@ -1,51 +1,50 @@
-* {	
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .carrusel {
-	height: 400px;
-	width: 100%;
-	background-color: black;
-	overflow: hidden;
+  height: 400px;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
 }
 
 .itemCarrusel {
-	height: 400px;
-	width: fit-content;
-	margin: 0 auto 0;
-	position: relative;
+  height: 400px;
+  width: fit-content;
+  margin: 0 auto 0;
+  position: relative;
 }
 
-
 .tarjetaCarrusel {
-    height: 100%;
+  height: 100%;
 }
 
 .flechaCarrusel {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;	
-	padding: 20px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .flechaCarrusel a {
-	text-decoration: none;
-	color: #ffffff;
-	font-size: 30px;	
-	text-align: center;
-	border-radius: 50px;
-	padding: 15px;
-	background-color: rgba(0, 0, 0, 0.5);
-	box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
-	transition: .3 ease;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 50px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+  transition: 0.3 ease;
 }
 
 .itemCarrusel > img {
-	width: 100%;
+  width: 100%;
 }

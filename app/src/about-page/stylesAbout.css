@@ -1,5 +1,5 @@
 .container {
-  display: flex;/* Utiliza flexbox para organizar los elementos en una fila */
+  display: flex; /* Utiliza flexbox para organizar los elementos en una fila */
   justify-content: center;
   margin-bottom: 30px; /* Centra los elementos horizontalmente */
 }
@@ -14,7 +14,6 @@
   position: relative; /* Posición relativa para elementos internos absolutos */
   margin: 0 60px; /* Espacio horizontal entre los elementos */
   margin-top: 30px; /* Espacio superior */
-  
 }
 
 .aboutImage h2 {
@@ -29,12 +28,13 @@
   transition: opacity 0.3s ease;
   background-color: rgba(46, 45, 45, 0.7); /* Color de fondo con opacidad */
   border-radius: 5px; /* Redondea las esquinas del fondo */
-  backdrop-filter: blur(1px); /* Agrega un desenfoque al fondo para translucidez */
+  backdrop-filter: blur(
+    1px
+  ); /* Agrega un desenfoque al fondo para translucidez */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para suavizar las puntas */
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
   padding: 25px; /* Espacio interno */
 }
-
 
 .aboutImage img {
   width: 100%;

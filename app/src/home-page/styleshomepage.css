@@ -1,235 +1,235 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .titulo {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 50px;
-    height: fit-content;
-    background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px;
+  height: fit-content;
+  background-color: #ffffff;
 }
 
 .titulo h2 {
-    font-size: 30px;
-    color: #A67C52;
-    margin-top: 30px;
+  font-size: 30px;
+  color: #a67c52;
+  margin-top: 30px;
 }
 
 .titulo h1 {
-    font-size: 70px;
-    color: #113b4b;
-    padding: 10px;
-    border-bottom: 2px solid #113b4b;
+  font-size: 70px;
+  color: #113b4b;
+  padding: 10px;
+  border-bottom: 2px solid #113b4b;
 }
 
 .importancia {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    width: 100%;
-    height: fit-content;
-    background-color: white;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  height: fit-content;
+  background-color: white;
+  align-items: center;
 }
 
 .titulo {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .titulo h3 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 #tituloBlock1 {
-    font-size: 100px;
-    color: #113b4b;
+  font-size: 100px;
+  color: #113b4b;
 }
 
 #tituloBlock2 {
-    font-size: 35px;
-    padding: 5px;
-    border-top: 3px solid #113b4b;
+  font-size: 35px;
+  padding: 5px;
+  border-top: 3px solid #113b4b;
 }
 
 .beneficios {
-    margin: 10px;
-    padding: 30px;
-    display: grid;
-    grid-template-columns: 50% 50%;
+  margin: 10px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-.itembeneficios {    
-    border-radius: 50px;
-    box-shadow: 0px 5px 10px rgba(0,  0, 0,0.35);
-    width: 300px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 6px;
-    padding: 10px;
-    transition: all 0.3s ease-in-out;
+.itembeneficios {
+  border-radius: 50px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 6px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 .itembeneficios:hover {
-    background-color: #01161e;
+  background-color: #01161e;
 }
 
-.itembeneficios:hover  p{
-    color: #ffffff;
+.itembeneficios:hover p {
+  color: #ffffff;
 }
 
 .itembeneficios h2 {
-    color: #e4ca97;
+  color: #e4ca97;
 }
 
 .itembeneficios p {
-    color: #113b4b;
-    text-align: center;
+  color: #113b4b;
+  text-align: center;
 }
 
 .itembeneficios i {
-    color: #e4ca97;
-    font-size: 30px;
+  color: #e4ca97;
+  font-size: 30px;
 }
 
 .informationBox {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /*background-color: #e3dccd;*/
-    padding: 50px;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /*background-color: #e3dccd;*/
+  padding: 50px;
+  text-align: center;
 }
 
 .informationBox img {
-    width: 150px;
-    margin: 10px;
-    border-radius: 50%;
-    box-shadow: 0px 5px 10px rgba(0,  0, 0,0.5);
+  width: 150px;
+  margin: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .informationBox h1 {
-    color: #113b4b;
-    font-size: 90px;
+  color: #113b4b;
+  font-size: 90px;
 }
 
 .informationBox h2 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .informationBox p {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 10px;
-    font-size: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .servicios {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
 }
 
 .servicios h2 {
-    color: #113b4b;
-    font-size: 50px;
-    padding-bottom: 5px;
-    border-bottom: 3px solid #113b4b;
-    width: fit-content;
-    margin-left: 40px;
-    margin-top: 30px;
+  color: #113b4b;
+  font-size: 50px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #113b4b;
+  width: fit-content;
+  margin-left: 40px;
+  margin-top: 30px;
 }
 
 .servicios h3 {
-    font-size: 30px;
-    padding-bottom: 5px;
-    margin-top: 20px;
-    margin-left: 40px;
+  font-size: 30px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-left: 40px;
 }
 
 .servicios p {
-    font-size: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
+  font-size: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .gridservicios {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: fit-content;
-    background-color: #ffffff;
-    margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  background-color: #ffffff;
+  margin-top: 30px;
 }
 
 .servicio h2 {
-    font-size: 20px;
-    color: #113b4b;
-    padding: 10px;
-    border-bottom: 2px solid #113b4b;
-    width: fit-content;
-    margin: 0;
+  font-size: 20px;
+  color: #113b4b;
+  padding: 10px;
+  border-bottom: 2px solid #113b4b;
+  width: fit-content;
+  margin: 0;
 }
 
 .servicio {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.servicio:hover  {
-    background-color: #e3dccd;    
+.servicio:hover {
+  background-color: #e3dccd;
 }
 
 .servicio.active {
-    background-color: #e3dccd; /* Color al hacer clic */
-  }
+  background-color: #e3dccd; /* Color al hacer clic */
+}
 
 .serviciodescripcion {
-    display: none;
-    align-items: left;
-    flex-direction: column;
-    width: 100%;
-    padding: 50px;
-    height: fit-content;
-    background-color: #e3dccd;
+  display: none;
+  align-items: left;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px;
+  height: fit-content;
+  background-color: #e3dccd;
 }
 
 .serviciodescripcion h2 {
-    font-size: 40px;
-    color: #113b4b;
-    padding: 10px;
-    border-bottom: 2px solid #113b4b;
+  font-size: 40px;
+  color: #113b4b;
+  padding: 10px;
+  border-bottom: 2px solid #113b4b;
 }
 
 .serviciodescripcion p {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .serviciodescripcion ol {
-    font-size: 20px;
-    margin-left: 100px;
-    margin-right: 40px;
-    margin-top: 40px;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 40px;
+  margin-top: 40px;
 }
 
 #descripcion1 {
-    display: flex;
+  display: flex;
 }
