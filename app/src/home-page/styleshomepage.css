@@ -233,3 +233,96 @@
 #descripcion1 {
     display: flex;
 }
+
+.habitaciones {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.habitaciones h2 {
+    color: #113b4b;
+    font-size: 50px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #113b4b;
+    width: fit-content;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.habitaciones h3 {
+    font-size: 30px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.habitaciones p {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 40px; 
+}
+
+.habitacion h2 {
+    font-size: 20px;
+    color: #113b4b;
+    padding: 10px;
+    border-bottom: 2px solid #113b4b;
+    width: fit-content;
+    margin: 0;
+}
+
+.habitacion {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.habitacion:hover  {
+    background-color: #e3dccd;    
+}
+
+.habitacion.active {
+    background-color: #e3dccd; /* Color al hacer clic */
+  }
+
+.habitaciondescripcion {
+    display: none;
+    align-items: left;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+    height: fit-content;
+    background-color: #e3dccd;
+}
+
+.habitaciondescripcion h2 {
+    font-size: 40px;
+    color: #113b4b;
+    padding: 10px;
+    border-bottom: 2px solid #113b4b;
+}
+
+.habitaciondescripcion p {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.habitaciondescripcion ol {
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
+#habitacion1 {
+    display: flex;
+}

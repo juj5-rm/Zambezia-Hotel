@@ -13,7 +13,7 @@
 
 .itemCarrusel {
 	height: 400px;
-	width: fit-content;
+	width: 100%;
 	margin: 0 auto 0;
 	position: relative;
 }
