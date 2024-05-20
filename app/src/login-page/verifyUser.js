@@ -97,6 +97,7 @@ async function deleteUser() {
 }
 
 function showConfirmationDialog(message, callback) {
+  document.body.style.overflow = "hidden";
   const confirmationDialog = document.createElement("div");
   confirmationDialog.classList.add("confirmation-dialog");
 
@@ -110,6 +111,7 @@ function showConfirmationDialog(message, callback) {
   yesButton.textContent = "Sí";
   yesButton.classList.add("dialog-button");
   yesButton.addEventListener("click", () => {
+    document.body.style.overflow = "auto";
     document.body.removeChild(confirmationDialog);
     callback(true);
   });
@@ -118,6 +120,7 @@ function showConfirmationDialog(message, callback) {
   noButton.textContent = "No";
   noButton.classList.add("dialog-button");
   noButton.addEventListener("click", () => {
+    document.body.style.overflow = "auto";
     document.body.removeChild(confirmationDialog);
     callback(false);
   });

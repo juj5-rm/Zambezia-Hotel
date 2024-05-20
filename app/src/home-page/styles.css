@@ -7,7 +7,6 @@ body {
   background: #c7b691;
   font-family: "Franklin Gothic", "Arial Narrow", Arial, sans-serif;
   overflow: auto;
-  min-height: 100vh;
 }
 
 .fondoNavbar {

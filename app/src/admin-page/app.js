@@ -77,11 +77,29 @@ function renderTable(data, targetElement, entityType) {
   targetElement.appendChild(containerDiv);
 }
 
+// Function to get the ID for a specific entity type
+function getIdForEntityType(entityType, item) {
+  switch (entityType) {
+    case "bookings":
+      return item.idBooking;
+    case "rooms":
+      return item.idRoom;
+    case "typeRooms":
+      return item.id;
+    case "clients":
+      return item.idUser;
+    default:
+      return null;
+  }
+}
+
 // Function to show the edit form
 async function showEditForm(data, entityType, id) {
   const editFormSection = document.getElementById("editFormSection");
   const formContainer = document.createElement("div");
   formContainer.classList.add("formulario");
+  document.getElementById("editFormSection").classList.remove("none");
+  editFormSection.classList.add("no-scroll");
 
   const closeButton = document.createElement("button");
   closeButton.textContent = "X";
@@ -92,7 +110,7 @@ async function showEditForm(data, entityType, id) {
   };
   formContainer.appendChild(closeButton);
 
-  const formTitle = document.createElement("h1");
+  const formTitle = document.createElement("h2");
   formTitle.textContent = "Editar Registro";
   formContainer.appendChild(formTitle);
 
@@ -131,27 +149,14 @@ async function showEditForm(data, entityType, id) {
   document.body.classList.add("no-scroll");
   editFormSection.classList.remove("none");
 }
-// Function to get the ID for a specific entity type
-function getIdForEntityType(entityType, item) {
-  switch (entityType) {
-    case "bookings":
-      return item.idBooking;
-    case "rooms":
-      return item.idRoom;
-    case "typeRooms":
-      return item.id;
-    case "clients":
-      return item.idUser;
-    default:
-      return null;
-  }
-}
 
 // Function to show the add form
 function showAddForm(entityType) {
   const editFormSection = document.getElementById("editFormSection");
   const formContainer = document.createElement("div");
   formContainer.classList.add("formulario");
+  document.getElementById("editFormSection").classList.remove("none");
+  editFormSection.classList.add("no-scroll");
 
   const closeButton = document.createElement("button");
   closeButton.textContent = "X";
