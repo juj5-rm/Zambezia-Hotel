@@ -1,3 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contentofpage {
+  flex: 1;
+  /* Agrega tu estilo para el contenido aquí */
+}
+
 footer {
   padding: 3px;
   color: white;

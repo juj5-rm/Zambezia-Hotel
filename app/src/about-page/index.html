@@ -17,161 +17,169 @@
     ></script>
   </head>
   <body>
-    <nav id="navBar" class="navbar">
-      <ul>
-        <div class="containerNavBar">
-          <li class="logoItemNavbar">
-            <img
-              src="../../asset/img/logoHotel.png"
-              alt="Logo Hotel"
-              class="logoNavbar"
-            />
-          </li>
-          <li>
-            <a href="../home-page/index.html"><b>ZAMBEZIA HOTEL</b></a>
-          </li>
-        </div>
-        <div class="containerNavBar containerLinks">
-          <li>
-            <a href="../contact-page/index.html"><b>Contactanos</b></a>
-          </li>
-          <li>
-            <a href="./index.html"><b>Sobre nosotros</b></a>
-          </li>
-          <li class="loginNavBar">
-            <a id="logged-in"
-              ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
-            /></a>
-            <div id="dialog" class="box" style="display: none" ;>
-              <button id="adminButton" class="buttonMenu">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                Administrador
-              </button>
-              <button id="reservationsButton" class="buttonMenu">
-                <i class="fa-regular fa-square-check"></i>
-                Mis reservas
-              </button>
-              <button class="buttonMenu" id="logoutButton">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                Cerrar sesión
-              </button>
-              <button id="deleteUserButton" class="buttonMenu">
-                <i class="fa-solid fa-user-minus"></i>
-                Eliminar Cuenta
-              </button>
-            </div>
-          </li>
-        </div>
-      </ul>
-    </nav>
-    <div class="fondoNavbar"></div>
-    <div class="container">
-      <div class="aboutImage">
-        <h2>Misión</h2>
-        <img src="../../asset/img/hotelFoto1.jpeg" alt="" />
-        <div class="capa">
-          <p>
-            En nuestro hotel, nos comprometemos a superar las expectativas de
-            nuestros huéspedes al ofrecer un servicio excepcional y de alta
-            calidad. Nuestro objetivo es proporcionar una experiencia
-            inigualable, donde cada detalle refleje nuestro compromiso con la
-            excelencia y la satisfacción del cliente. Buscamos crear un ambiente
-            acogedor y memorable, donde cada huésped se sienta especial y
-            valorado. A través de nuestro servicio personalizado, instalaciones
-            de primera clase y atención al detalle, aspiramos a ser reconocidos
-            como el destino preferido por quienes buscan lo mejor en
-            hospitalidad. Nuestra misión es convertir cada estadía en una
-            experiencia inolvidable, dejando una impresión positiva que perdure
-            mucho después de que nuestros huéspedes hayan regresado a casa.
-          </p>
-        </div>
-      </div>
-
-      <div class="aboutImage">
-        <h2>Visión</h2>
-        <img src="../../asset/img/hotelFoto2.jpg" alt="" />
-        <div class="capa">
-          <p>
-            Nuestra visión es convertirnos en el referente de excelencia en
-            hospitalidad, reconocidos tanto a nivel local como internacional por
-            nuestro servicio de clase mundial y nuestras instalaciones de
-            primera categoría. Nos esforzamos por ser el destino preferido para
-            viajeros exigentes, quienes buscan una experiencia única y memorable
-            en cada estadía. A través de la innovación continua, el compromiso
-            con la calidad y la atención a los detalles, aspiramos a establecer
-            nuevos estándares en la industria hotelera. Visualizamos un futuro
-            donde nuestro hotel sea conocido por ofrecer no solo alojamiento,
-            sino también un estilo de vida de lujo y comodidad, donde cada
-            visita sea una experiencia verdaderamente extraordinaria.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="btn-booking">
-      <a href="../booking-page/index.html" title="Reservar ahora!">
-        <i class="fa-regular fa-calendar-plus"></i>
-        <span class="btn-text">Reservar ahora</span>
-      </a>
-    </div>
-    <!--loader-->
-    <div class="loaderDiv" id="loader" style="display: none">
-      <span class="loader"></span>
-    </div>
-    <footer id="footer" class="Footer">
-      <div class="containerFooter">
-        <div class="waterMark">
-          <p>Barú, Bolivar, Colombia</p>
-          <p>hotelzambezia@gmail.com</p>
-          <p>+57 3405252 EXT 100</p>
-        </div>
-        <div class="redescopy">
-          <div class="redes">
-            <ul class="siguenos">
-              <li>
-                <a href="https://www.facebook.com/" target="_blank"
-                  ><i class="fa-brands fa-square-facebook redesfooter"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://twitter.com/?lang=en" target="_blank"
-                  ><i class="fa-brands fa-square-x-twitter redesfooter"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/" target="_blank"
-                  ><i class="fa-brands fa-square-instagram redesfooter"></i
-                ></a>
-              </li>
-            </ul>
+    <div class="wrapper">
+      <nav id="navBar" class="navbar">
+        <ul>
+          <div class="containerNavBar">
+            <li class="logoItemNavbar">
+              <img
+                src="../../asset/img/logoHotel.png"
+                alt="Logo Hotel"
+                class="logoNavbar"
+              />
+            </li>
+            <li>
+              <a href="../home-page/index.html"><b>ZAMBEZIA HOTEL</b></a>
+            </li>
           </div>
-          <p id="copyright">Copyright © 2024 Zambezia Hotel</p>
-        </div>
-        <div class="contentFooter">
-          <dl class="legalinfo">
-            <dt>
-              <b>Informacion legal</b>
-            </dt>
-            <dd><br /></dd>
-            <dd><a href="#">Politica de privacidad</a></dd>
-            <dd><a href="#">Terminos y condiciones</a></dd>
-            <dd><a href="#">Politica de cookies</a></dd>
-          </dl>
-          <dl class="webnav">
-            <dt><b>Mapa del sitio</b></dt>
-            <dd><br /></dd>
-            <dd><a href="../home-page/index.html">Inicio</a></dd>
-            <dd>
-              <a href="../home-page/index.html#ServiciosBox">servicios</a>
-            </dd>
+          <div class="containerNavBar containerLinks">
+            <li>
+              <a href="../contact-page/index.html"><b>Contactanos</b></a>
+            </li>
+            <li>
+              <a href="./index.html"><b>Sobre nosotros</b></a>
+            </li>
+            <li class="loginNavBar">
+              <a id="logged-in"
+                ><img
+                  src="../../asset/img/loginImagen.png"
+                  alt="Icono de Login"
+              /></a>
+              <div id="dialog" class="box" style="display: none" ;>
+                <button id="adminButton" class="buttonMenu">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                  Administrador
+                </button>
+                <button id="reservationsButton" class="buttonMenu">
+                  <i class="fa-regular fa-square-check"></i>
+                  Mis reservas
+                </button>
+                <button class="buttonMenu" id="logoutButton">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Cerrar sesión
+                </button>
+                <button id="deleteUserButton" class="buttonMenu">
+                  <i class="fa-solid fa-user-minus"></i>
+                  Eliminar Cuenta
+                </button>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <div class="fondoNavbar"></div>
+      <div class="contentofpage">
+        <div class="container">
+          <div class="aboutImage">
+            <h2>Misión</h2>
+            <img src="../../asset/img/hotelFoto1.jpeg" alt="" />
+            <div class="capa">
+              <p>
+                En nuestro hotel, nos comprometemos a superar las expectativas
+                de nuestros huéspedes al ofrecer un servicio excepcional y de
+                alta calidad. Nuestro objetivo es proporcionar una experiencia
+                inigualable, donde cada detalle refleje nuestro compromiso con
+                la excelencia y la satisfacción del cliente. Buscamos crear un
+                ambiente acogedor y memorable, donde cada huésped se sienta
+                especial y valorado. A través de nuestro servicio personalizado,
+                instalaciones de primera clase y atención al detalle, aspiramos
+                a ser reconocidos como el destino preferido por quienes buscan
+                lo mejor en hospitalidad. Nuestra misión es convertir cada
+                estadía en una experiencia inolvidable, dejando una impresión
+                positiva que perdure mucho después de que nuestros huéspedes
+                hayan regresado a casa.
+              </p>
+            </div>
+          </div>
 
-            <dd><a href="../contact-page/index.html">Contactanos</a></dd>
-            <dd><a href="./index.html">Conocenos</a></dd>
-            <dd><a href="../booking-page/index.html">Reservar</a></dd>
-          </dl>
+          <div class="aboutImage">
+            <h2>Visión</h2>
+            <img src="../../asset/img/hotelFoto2.jpg" alt="" />
+            <div class="capa">
+              <p>
+                Nuestra visión es convertirnos en el referente de excelencia en
+                hospitalidad, reconocidos tanto a nivel local como internacional
+                por nuestro servicio de clase mundial y nuestras instalaciones
+                de primera categoría. Nos esforzamos por ser el destino
+                preferido para viajeros exigentes, quienes buscan una
+                experiencia única y memorable en cada estadía. A través de la
+                innovación continua, el compromiso con la calidad y la atención
+                a los detalles, aspiramos a establecer nuevos estándares en la
+                industria hotelera. Visualizamos un futuro donde nuestro hotel
+                sea conocido por ofrecer no solo alojamiento, sino también un
+                estilo de vida de lujo y comodidad, donde cada visita sea una
+                experiencia verdaderamente extraordinaria.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-booking">
+          <a href="../booking-page/index.html" title="Reservar ahora!">
+            <i class="fa-regular fa-calendar-plus"></i>
+            <span class="btn-text">Reservar ahora</span>
+          </a>
         </div>
       </div>
-    </footer>
-    <script type="module" src="../login-page/verifyUser.js"></script>
-    <script src="./app.js"></script>
+      <!--loader-->
+      <div class="loaderDiv" id="loader" style="display: none">
+        <span class="loader"></span>
+      </div>
+      <footer id="footer" class="Footer">
+        <div class="containerFooter">
+          <div class="waterMark">
+            <p>Barú, Bolivar, Colombia</p>
+            <p>hotelzambezia@gmail.com</p>
+            <p>+57 3405252 EXT 100</p>
+          </div>
+          <div class="redescopy">
+            <div class="redes">
+              <ul class="siguenos">
+                <li>
+                  <a href="https://www.facebook.com/" target="_blank"
+                    ><i class="fa-brands fa-square-facebook redesfooter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/?lang=en" target="_blank"
+                    ><i class="fa-brands fa-square-x-twitter redesfooter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank"
+                    ><i class="fa-brands fa-square-instagram redesfooter"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <p id="copyright">Copyright © 2024 Zambezia Hotel</p>
+          </div>
+          <div class="contentFooter">
+            <dl class="legalinfo">
+              <dt>
+                <b>Informacion legal</b>
+              </dt>
+              <dd><br /></dd>
+              <dd><a href="#">Politica de privacidad</a></dd>
+              <dd><a href="#">Terminos y condiciones</a></dd>
+              <dd><a href="#">Politica de cookies</a></dd>
+            </dl>
+            <dl class="webnav">
+              <dt><b>Mapa del sitio</b></dt>
+              <dd><br /></dd>
+              <dd><a href="../home-page/index.html">Inicio</a></dd>
+              <dd>
+                <a href="../home-page/index.html#ServiciosBox">servicios</a>
+              </dd>
+
+              <dd><a href="../contact-page/index.html">Contactanos</a></dd>
+              <dd><a href="./index.html">Conocenos</a></dd>
+              <dd><a href="../booking-page/index.html">Reservar</a></dd>
+            </dl>
+          </div>
+        </div>
+      </footer>
+      <script type="module" src="../login-page/verifyUser.js"></script>
+      <script src="./app.js"></script>
+    </div>
   </body>
 </html>

@@ -2,6 +2,7 @@ function renderTable(data, targetElement, entityType) {
   const containerDiv = document.createElement("div");
   containerDiv.className = "table-container";
   const table = document.createElement("table");
+  table.className = "tableView";
   const headerRow = table.insertRow();
 
   if (data.length === 0) {
@@ -19,6 +20,7 @@ function renderTable(data, targetElement, entityType) {
     }
     const actionsHeader = document.createElement("th");
     actionsHeader.textContent = "Acciones";
+    actionsHeader.classList.add("actions-header");
     headerRow.appendChild(actionsHeader);
 
     data.forEach((item) => {
@@ -63,7 +65,7 @@ function renderTable(data, targetElement, entityType) {
     // Add the add button only for non-bookings tables
     if (entityType !== "bookings") {
       const addButton = document.createElement("button");
-      addButton.textContent = "Agregar";
+      addButton.innerHTML = `<i class="fa-solid fa-plus"></i>`;
       addButton.classList.add("add-Button");
       addButton.onclick = function () {
         showAddForm(entityType);
@@ -102,7 +104,7 @@ async function showEditForm(data, entityType, id) {
   editFormSection.classList.add("no-scroll");
 
   const closeButton = document.createElement("button");
-  closeButton.textContent = "X";
+  closeButton.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
   closeButton.classList.add("close-button");
   closeButton.onclick = function () {
     editFormSection.classList.add("none");
@@ -115,8 +117,16 @@ async function showEditForm(data, entityType, id) {
   formContainer.appendChild(formTitle);
 
   const formElement = document.createElement("form");
+  // Omitir el campo 'id'
 
   for (const key in data) {
+    /*if (
+      key === "id" ||
+      key === "idUser" ||
+      key === "idRoom" ||
+      key === "idBooking"
+    )
+    continue;*/
     const fieldContainer = document.createElement("div");
     fieldContainer.classList.add(
       key.includes("password") ? "password" : "username"
@@ -159,7 +169,7 @@ function showAddForm(entityType) {
   editFormSection.classList.add("no-scroll");
 
   const closeButton = document.createElement("button");
-  closeButton.textContent = "X";
+  closeButton.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
   closeButton.classList.add("close-button");
   closeButton.onclick = function () {
     editFormSection.classList.add("none");
