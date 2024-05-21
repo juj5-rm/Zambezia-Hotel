@@ -76,7 +76,6 @@ function renderTable(data, targetElement, entityType) {
   targetElement.innerHTML = "";
   targetElement.appendChild(containerDiv);
 }
-
 // Function to show the edit form
 async function showEditForm(data, entityType, id) {
   const editFormSection = document.getElementById("editFormSection");
@@ -99,19 +98,21 @@ async function showEditForm(data, entityType, id) {
   const formElement = document.createElement("form");
 
   for (const key in data) {
-    const fieldContainer = document.createElement("div");
-    fieldContainer.classList.add(
-      key.includes("password") ? "password" : "username"
-    );
+    if (key !== getIdFieldName(entityType)) { // Exclude the ID field
+      const fieldContainer = document.createElement("div");
+      fieldContainer.classList.add(
+        key.includes("password") ? "password" : "username"
+      );
 
-    const inputElement = document.createElement("input");
-    inputElement.type = "text";
-    inputElement.name = key;
-    inputElement.value = data[key];
-    inputElement.placeholder = translateToSpanish(key);
+      const inputElement = document.createElement("input");
+      inputElement.type = "text";
+      inputElement.name = key;
+      inputElement.value = data[key];
+      inputElement.placeholder = translateToSpanish(key);
 
-    fieldContainer.appendChild(inputElement);
-    formElement.appendChild(fieldContainer);
+      fieldContainer.appendChild(inputElement);
+      formElement.appendChild(fieldContainer);
+    }
   }
 
   const submitButton = document.createElement("button");
@@ -131,6 +132,23 @@ async function showEditForm(data, entityType, id) {
   document.body.classList.add("no-scroll");
   editFormSection.classList.remove("none");
 }
+
+// Function to get the ID field name for a specific entity type
+function getIdFieldName(entityType) {
+  switch (entityType) {
+    case "bookings":
+      return "idBooking";
+    case "rooms":
+      return "idRoom";
+    case "typeRooms":
+      return "id";
+    case "clients":
+      return "idUser";
+    default:
+      return null;
+  }
+}
+
 // Function to get the ID for a specific entity type
 function getIdForEntityType(entityType, item) {
   switch (entityType) {
