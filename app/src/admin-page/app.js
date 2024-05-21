@@ -78,23 +78,6 @@ function renderTable(data, targetElement, entityType) {
   targetElement.innerHTML = "";
   targetElement.appendChild(containerDiv);
 }
-
-// Function to get the ID for a specific entity type
-function getIdForEntityType(entityType, item) {
-  switch (entityType) {
-    case "bookings":
-      return item.idBooking;
-    case "rooms":
-      return item.idRoom;
-    case "typeRooms":
-      return item.id;
-    case "clients":
-      return item.idUser;
-    default:
-      return null;
-  }
-}
-
 // Function to show the edit form
 async function showEditForm(data, entityType, id) {
   const editFormSection = document.getElementById("editFormSection");
@@ -126,16 +109,16 @@ async function showEditForm(data, entityType, id) {
       fieldContainer.classList.add(
         key.includes("password") ? "password" : "username"
       );
+
+      const inputElement = document.createElement("input");
+      inputElement.type = "text";
+      inputElement.name = key;
+      inputElement.value = data[key];
+      inputElement.placeholder = translateToSpanish(key);
+
+      fieldContainer.appendChild(inputElement);
+      formElement.appendChild(fieldContainer);
     }
-
-    const inputElement = document.createElement("input");
-    inputElement.type = "text";
-    inputElement.name = key;
-    inputElement.value = data[key];
-    inputElement.placeholder = translateToSpanish(key);
-
-    fieldContainer.appendChild(inputElement);
-    formElement.appendChild(fieldContainer);
   }
 
   const submitButton = document.createElement("button");
@@ -167,6 +150,22 @@ function getIdFieldName(entityType) {
       return "id";
     case "clients":
       return "idUser";
+    default:
+      return null;
+  }
+}
+
+// Function to get the ID for a specific entity type
+function getIdForEntityType(entityType, item) {
+  switch (entityType) {
+    case "bookings":
+      return item.idBooking;
+    case "rooms":
+      return item.idRoom;
+    case "typeRooms":
+      return item.id;
+    case "clients":
+      return item.idUser;
     default:
       return null;
   }
