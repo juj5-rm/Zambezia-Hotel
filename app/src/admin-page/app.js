@@ -120,17 +120,13 @@ async function showEditForm(data, entityType, id) {
   // Omitir el campo 'id'
 
   for (const key in data) {
-    /*if (
-      key === "id" ||
-      key === "idUser" ||
-      key === "idRoom" ||
-      key === "idBooking"
-    )
-    continue;*/
-    const fieldContainer = document.createElement("div");
-    fieldContainer.classList.add(
-      key.includes("password") ? "password" : "username"
-    );
+    if (key !== getIdFieldName(entityType)) {
+      // Exclude the ID field
+      const fieldContainer = document.createElement("div");
+      fieldContainer.classList.add(
+        key.includes("password") ? "password" : "username"
+      );
+    }
 
     const inputElement = document.createElement("input");
     inputElement.type = "text";
@@ -158,6 +154,22 @@ async function showEditForm(data, entityType, id) {
   window.scrollTo(0, 0);
   document.body.classList.add("no-scroll");
   editFormSection.classList.remove("none");
+}
+
+// Function to get the ID field name for a specific entity type
+function getIdFieldName(entityType) {
+  switch (entityType) {
+    case "bookings":
+      return "idBooking";
+    case "rooms":
+      return "idRoom";
+    case "typeRooms":
+      return "id";
+    case "clients":
+      return "idUser";
+    default:
+      return null;
+  }
 }
 
 // Function to show the add form
