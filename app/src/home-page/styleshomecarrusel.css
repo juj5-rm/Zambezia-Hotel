@@ -5,6 +5,8 @@
 }
 
 .carrusel {
+  align-items: center;
+  justify-content: center;
   height: 400px;
   width: 100%;
   background-color: black;
@@ -15,11 +17,14 @@
 	height: 400px;
 	width: 100%;
 	margin: 0 auto 0;
-	position: relative;
+	position: relative;  
+  align-items: center;
+  justify-content: center;
 }
 
 .tarjetaCarrusel {
   height: 100%;
+  width: 100%;
 }
 
 .flechaCarrusel {

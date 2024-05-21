@@ -16,173 +16,181 @@
     ></script>
   </head>
   <body>
-    <nav id="navBar" class="navbar">
-      <ul>
-        <div class="containerNavBar">
-          <li class="logoItemNavbar">
-            <img
-              src="../../asset/img/logoHotel.png"
-              alt="Logo Hotel"
-              class="logoNavbar"
-            />
-          </li>
-          <li>
-            <a href="../home-page/index.html"><b>ZAMBEZIA HOTEL</b></a>
-          </li>
+    <div class="wrapper">
+      <nav id="navBar" class="navbar">
+        <ul>
+          <div class="containerNavBar">
+            <li class="logoItemNavbar">
+              <img
+                src="../../asset/img/logoHotel.png"
+                alt="Logo Hotel"
+                class="logoNavbar"
+              />
+            </li>
+            <li>
+              <a href="../home-page/index.html"><b>ZAMBEZIA HOTEL</b></a>
+            </li>
+          </div>
+          <div class="containerNavBar containerLinks">
+            <li>
+              <a href="../contact-page/index.html"><b>Contactanos</b></a>
+            </li>
+            <li>
+              <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
+            </li>
+            <li class="loginNavBar">
+              <a id="logged-in"
+                ><img
+                  src="../../asset/img/loginImagen.png"
+                  alt="Icono de Login"
+              /></a>
+              <div id="dialog" class="box" style="display: none" ;>
+                <button id="adminButton" class="buttonMenu">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                  Administrador
+                </button>
+                <button id="reservationsButton" class="buttonMenu">
+                  <i class="fa-regular fa-square-check"></i>
+                  Mis reservas
+                </button>
+                <button class="buttonMenu" id="logoutButton">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Cerrar sesión
+                </button>
+                <button id="deleteUserButton" class="buttonMenu">
+                  <i class="fa-solid fa-user-minus"></i>
+                  Eliminar Cuenta
+                </button>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <div class="fondoNavbar"></div>
+      <div class="contentofPage">
+        <!--contenido pagina-->
+        <!--reservar ahora-->
+        <div class="formSpace">
+          <div class="formularioReserva">
+            <h2>Reserva</h2>
+            <form class="reservacion" method="post" id="bookingUser">
+              <div class="containerinput">
+                <p>Fecha de llegada</p>
+                <input
+                  type="date"
+                  name="startDate"
+                  id="startDateReservation"
+                  placeholder="Fecha de entrada"
+                  required
+                />
+              </div>
+              <p class="errorp" id="error">Fecha no valida</p>
+              <div class="containerinput">
+                <p>Fecha de salida</p>
+                <input
+                  type="date"
+                  name="finishDate"
+                  id="finishDateReservation"
+                  placeholder="Fecha de salida"
+                  required
+                />
+              </div>
+              <p class="errorp" id="error2">Fecha no valida</p>
+              <div class="containerinput">
+                <select name="typeRoom" id="typeroom" required>
+                  <option value="" disabled selected>
+                    Selecciona el tipo de habitación
+                  </option>
+                </select>
+              </div>
+              <button type="button" onclick="showup()" id="botonDisponibilidad">
+                verificar disponibilidad
+              </button>
+              <div class="containerinput hidden">
+                <input
+                  type="number"
+                  name="idUser"
+                  id="iduser"
+                  placeholder="id usuario"
+                  required
+                />
+              </div>
+              <div class="containerinput automatic" id="idRoom">
+                <select name="idRoom" id="idroom" required>
+                  <option value="" disabled selected>
+                    Selecciona el numero de habitacion
+                  </option>
+                </select>
+              </div>
+              <button type="submit" id="botonReserva">Reserva</button>
+            </form>
+          </div>
         </div>
-        <div class="containerNavBar containerLinks">
-          <li>
-            <a href="../contact-page/index.html"><b>Contactanos</b></a>
-          </li>
-          <li>
-            <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
-          </li>
-          <li class="loginNavBar">
-            <a id="logged-in"
-              ><img src="../../asset/img/loginImagen.png" alt="Icono de Login"
-            /></a>
-            <div id="dialog" class="box" style="display: none" ;>
-              <button id="adminButton" class="buttonMenu">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                Administrador
-              </button>
-              <button id="reservationsButton" class="buttonMenu">
-                <i class="fa-regular fa-square-check"></i>
-                Mis reservas
-              </button>
-              <button class="buttonMenu" id="logoutButton">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                Cerrar sesión
-              </button>
-              <button id="deleteUserButton" class="buttonMenu">
-                <i class="fa-solid fa-user-minus"></i>
-                Eliminar Cuenta
-              </button>
+      </div>
+      <!--loader-->
+      <div class="loaderDiv" id="loader">
+        <span class="loader"></span>
+      </div>
+      <!--footer-->
+      <footer id="footer" class="Footer">
+        <div class="containerFooter">
+          <div class="waterMark">
+            <p>Barú, Bolivar, Colombia</p>
+            <p>hotelzambezia@gmail.com</p>
+            <p>+57 3405252 EXT 100</p>
+          </div>
+          <div class="redescopy">
+            <div class="redes">
+              <ul class="siguenos">
+                <li>
+                  <a href="https://www.facebook.com/" target="_blank"
+                    ><i class="fa-brands fa-square-facebook redesfooter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/?lang=en" target="_blank"
+                    ><i class="fa-brands fa-square-x-twitter redesfooter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank"
+                    ><i class="fa-brands fa-square-instagram redesfooter"></i
+                  ></a>
+                </li>
+              </ul>
             </div>
-          </li>
+            <p id="copyright">Copyright © 2024 Zambezia Hotel</p>
+          </div>
+          <div class="contentFooter">
+            <dl class="legalinfo">
+              <dt>
+                <b>Informacion legal</b>
+              </dt>
+              <dd><br /></dd>
+              <dd><a href="#">Politica de privacidad</a></dd>
+              <dd><a href="#">Terminos y condiciones</a></dd>
+              <dd><a href="#">Politica de cookies</a></dd>
+            </dl>
+            <dl class="webnav">
+              <dt><b>Mapa del sitio</b></dt>
+              <dd><br /></dd>
+              <dd><a href="./index.html">Inicio</a></dd>
+              <dd>
+                <a href="../home-page/index.html#ServiciosBox">servicios</a>
+              </dd>
+              <dd>
+                <a href="../home-page/index.html#roomBoox">Habitaciones</a>
+              </dd>
+              <dd><a href="../contact-page/index.html">Contactanos</a></dd>
+              <dd><a href="../about-page/index.html">Conocenos</a></dd>
+              <dd><a href="../booking-page/index.html">Reservar</a></dd>
+            </dl>
+          </div>
         </div>
-      </ul>
-    </nav>
-    <div class="fondoNavbar"></div>
-    <!--contenido pagina-->
-    <!--reservar ahora-->
-    <div class="formSpace">
-      <div class="formularioReserva">
-        <h2>Reserva</h2>
-        <form class="reservacion" method="post" id="bookingUser">
-          <div class="containerinput">
-            <p>Fecha de llegada</p>
-            <input
-              type="date"
-              name="startDate"
-              id="startDateReservation"
-              placeholder="Fecha de entrada"
-              required
-            />
-          </div>
-          <p class="errorp" id="error">Fecha no valida</p>
-          <div class="containerinput">
-            <p>Fecha de salida</p>
-            <input
-              type="date"
-              name="finishDate"
-              id="finishDateReservation"
-              placeholder="Fecha de salida"
-              required
-            />
-          </div>
-          <p class="errorp" id="error2">Fecha no valida</p>
-          <div class="containerinput">
-            <select name="typeRoom" id="typeroom" required>
-              <option value="" disabled selected>
-                Selecciona el tipo de habitación
-              </option>
-            </select>
-          </div>
-          <button type="button" onclick="showup()" id="botonDisponibilidad">
-            verificar disponibilidad
-          </button>
-          <div class="containerinput hidden">
-            <input
-              type="number"
-              name="idUser"
-              id="iduser"
-              placeholder="id usuario"
-              required
-            />
-          </div>
-          <div class="containerinput automatic" id="idRoom">
-            <select name="idRoom" id="idroom" required>
-              <option value="" disabled selected>
-                Selecciona el numero de habitacion
-              </option>
-            </select>
-          </div>
-          <button type="submit" id="botonReserva">Reserva</button>
-        </form>
-      </div>
+      </footer>
+      <script type="module" src="../login-page/verifyUser.js"></script>
+      <script type="module" src="./loginData.js"></script>
+      <script src="./app.js"></script>
     </div>
-    <!--loader-->
-    <div class="loaderDiv" id="loader">
-      <span class="loader"></span>
-    </div>
-    <!--footer-->
-    <footer id="footer" class="Footer">
-      <div class="containerFooter">
-        <div class="waterMark">
-          <p>Barú, Bolivar, Colombia</p>
-          <p>hotelzambezia@gmail.com</p>
-          <p>+57 3405252 EXT 100</p>
-        </div>
-        <div class="redescopy">
-          <div class="redes">
-            <ul class="siguenos">
-              <li>
-                <a href="https://www.facebook.com/" target="_blank"
-                  ><i class="fa-brands fa-square-facebook redesfooter"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://twitter.com/?lang=en" target="_blank"
-                  ><i class="fa-brands fa-square-x-twitter redesfooter"></i
-                ></a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/" target="_blank"
-                  ><i class="fa-brands fa-square-instagram redesfooter"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-          <p id="copyright">Copyright © 2024 Zambezia Hotel</p>
-        </div>
-        <div class="contentFooter">
-          <dl class="legalinfo">
-            <dt>
-              <b>Informacion legal</b>
-            </dt>
-            <dd><br /></dd>
-            <dd><a href="#">Politica de privacidad</a></dd>
-            <dd><a href="#">Terminos y condiciones</a></dd>
-            <dd><a href="#">Politica de cookies</a></dd>
-          </dl>
-          <dl class="webnav">
-            <dt><b>Mapa del sitio</b></dt>
-            <dd><br /></dd>
-            <dd><a href="./index.html">Inicio</a></dd>
-            <dd>
-              <a href="../home-page/index.html#ServiciosBox">servicios</a>
-            </dd>
-            <dd><a href="../home-page/index.html#roomBoox">Habitaciones</a></dd>
-            <dd><a href="../contact-page/index.html">Contactanos</a></dd>
-            <dd><a href="../about-page/index.html">Conocenos</a></dd>
-            <dd><a href="../booking-page/index.html">Reservar</a></dd>
-          </dl>
-        </div>
-      </div>
-    </footer>
-    <script type="module" src="../login-page/verifyUser.js"></script>
-    <script type="module" src="./loginData.js"></script>
-    <script src="./app.js"></script>
   </body>
 </html>

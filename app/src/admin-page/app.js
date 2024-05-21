@@ -2,6 +2,7 @@ function renderTable(data, targetElement, entityType) {
   const containerDiv = document.createElement("div");
   containerDiv.className = "table-container";
   const table = document.createElement("table");
+  table.className = "tableView";
   const headerRow = table.insertRow();
 
   if (data.length === 0) {
@@ -19,6 +20,7 @@ function renderTable(data, targetElement, entityType) {
     }
     const actionsHeader = document.createElement("th");
     actionsHeader.textContent = "Acciones";
+    actionsHeader.classList.add("actions-header");
     headerRow.appendChild(actionsHeader);
 
     data.forEach((item) => {
@@ -63,7 +65,7 @@ function renderTable(data, targetElement, entityType) {
     // Add the add button only for non-bookings tables
     if (entityType !== "bookings") {
       const addButton = document.createElement("button");
-      addButton.textContent = "Agregar";
+      addButton.innerHTML = `<i class="fa-solid fa-plus"></i>`;
       addButton.classList.add("add-Button");
       addButton.onclick = function () {
         showAddForm(entityType);
@@ -81,9 +83,11 @@ async function showEditForm(data, entityType, id) {
   const editFormSection = document.getElementById("editFormSection");
   const formContainer = document.createElement("div");
   formContainer.classList.add("formulario");
+  document.getElementById("editFormSection").classList.remove("none");
+  editFormSection.classList.add("no-scroll");
 
   const closeButton = document.createElement("button");
-  closeButton.textContent = "X";
+  closeButton.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
   closeButton.classList.add("close-button");
   closeButton.onclick = function () {
     editFormSection.classList.add("none");
@@ -91,11 +95,12 @@ async function showEditForm(data, entityType, id) {
   };
   formContainer.appendChild(closeButton);
 
-  const formTitle = document.createElement("h1");
+  const formTitle = document.createElement("h2");
   formTitle.textContent = "Editar Registro";
   formContainer.appendChild(formTitle);
 
   const formElement = document.createElement("form");
+  // Omitir el campo 'id'
 
   for (const key in data) {
     if (key !== getIdFieldName(entityType)) { // Exclude the ID field
@@ -170,9 +175,11 @@ function showAddForm(entityType) {
   const editFormSection = document.getElementById("editFormSection");
   const formContainer = document.createElement("div");
   formContainer.classList.add("formulario");
+  document.getElementById("editFormSection").classList.remove("none");
+  editFormSection.classList.add("no-scroll");
 
   const closeButton = document.createElement("button");
-  closeButton.textContent = "X";
+  closeButton.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
   closeButton.classList.add("close-button");
   closeButton.onclick = function () {
     editFormSection.classList.add("none");
