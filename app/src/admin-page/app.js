@@ -26,7 +26,7 @@ function renderTable(data, targetElement, entityType) {
     containerDiv.appendChild(noDataMessage);
   } else {
     for (const key in data[0]) {
-      if (key !== "passwordUser") {
+      if (key !== "passwordUser" && key !== "typeUser") {
         const th = document.createElement("th");
         const spanishKey = translateToSpanish(key);
         th.textContent = spanishKey;
