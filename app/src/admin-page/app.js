@@ -5,6 +5,16 @@ function renderTable(data, targetElement, entityType) {
   table.className = "tableView";
   const headerRow = table.insertRow();
 
+  if (entityType !== "bookings") {
+    const addButton = document.createElement("button");
+    addButton.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+    addButton.classList.add("add-Button");
+    addButton.onclick = function () {
+      showAddForm(entityType);
+    };
+    containerDiv.appendChild(addButton);
+  }
+
   if (data.length === 0) {
     const noDataMessage = document.createElement("div");
     noDataMessage.textContent = "No hay registros disponibles";
@@ -61,17 +71,6 @@ function renderTable(data, targetElement, entityType) {
       actionsCell.appendChild(deleteButton);
       actionsCell.appendChild(document.createElement("br"));
     });
-
-    // Add the add button only for non-bookings tables
-    if (entityType !== "bookings") {
-      const addButton = document.createElement("button");
-      addButton.innerHTML = `<i class="fa-solid fa-plus"></i>`;
-      addButton.classList.add("add-Button");
-      addButton.onclick = function () {
-        showAddForm(entityType);
-      };
-      containerDiv.appendChild(addButton);
-    }
   }
 
   containerDiv.appendChild(table);
