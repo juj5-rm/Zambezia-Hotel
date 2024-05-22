@@ -39,11 +39,29 @@
               <a href="../about-page/index.html"><b>Sobre nosotros</b></a>
             </li>
             <li class="loginNavBar">
-              <a
+              <a id="logged-in"
                 ><img
                   src="../../asset/img/loginImagen.png"
                   alt="Icono de Login"
               /></a>
+              <div id="dialog" class="box" style="display: none" ;>
+                <button id="adminButton" class="buttonMenu">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                  Administrador
+                </button>
+                <button id="reservationsButton" class="buttonMenu">
+                  <i class="fa-regular fa-square-check"></i>
+                  Mis reservas
+                </button>
+                <button class="buttonMenu" id="logoutButton">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Cerrar sesión
+                </button>
+                <button id="deleteUserButton" class="buttonMenu">
+                  <i class="fa-solid fa-user-minus"></i>
+                  Eliminar Cuenta
+                </button>
+              </div>
             </li>
           </div>
         </ul>
