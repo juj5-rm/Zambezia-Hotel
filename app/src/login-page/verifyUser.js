@@ -2,7 +2,7 @@ import { getUserData, setUserData } from "./userData.js";
 
 const dialog = document.getElementById("dialog");
 const userData = getUserData();
-document.getElementById("logged-in").style.cursor = "pointer"
+document.getElementById("logged-in").style.cursor = "pointer";
 
 document.getElementById("logged-in").addEventListener("click", async () => {
   try {
@@ -37,7 +37,7 @@ if (userData.typeUser === "admin") {
   document.getElementById("deleteUserButton").style.display = "none";
   document.getElementById("adminButton").addEventListener("click", () => {
     window.location.href = "../admin-page/index.html";
-    dialog.style?.display = "none";
+    dialog.style.display = "none";
   });
 }
 
