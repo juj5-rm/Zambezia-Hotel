@@ -79,7 +79,7 @@ document.getElementById("deleteUserButton").addEventListener("click", () => {
 async function deleteUser() {
   try {
     const response = await fetch(
-      `https://q4l2x4sw-3000.use2.devtunnels.ms/deleteUser/${userData.idUser}`,
+      `https://final-proyect-db.onrender.com/deleteUser/${userData.idUser}`,
       {
         method: "DELETE",
       }

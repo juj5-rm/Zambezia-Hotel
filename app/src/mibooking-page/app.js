@@ -4,7 +4,7 @@ const userData = getUserData();
 async function getBooking(idUser) {
   try {
     const response = await fetch(
-      `https://q4l2x4sw-3000.use2.devtunnels.ms/getBookings/${idUser}`,
+      `https://final-proyect-db.onrender.com/getBookings/${idUser}`,
       {
         method: "GET",
       }
@@ -184,7 +184,7 @@ async function deleteBooking(idBooking) {
   document.body.style.overflow = "hidden";
   try {
     const response = await fetch(
-      `https://q4l2x4sw-3000.use2.devtunnels.ms/deleteBooking/${idBooking}`,
+      `https://final-proyect-db.onrender.com/deleteBooking/${idBooking}`,
       {
         method: "DELETE",
       }
@@ -218,7 +218,7 @@ function modificateBooking(booking) {
 async function getRoomTypes() {
   try {
     const response = await fetch(
-      "https://q4l2x4sw-3000.use2.devtunnels.ms/getTypeRooms",
+      "https://final-proyect-db.onrender.com/getTypeRooms",
       {
         method: "GET",
       }
@@ -249,7 +249,7 @@ async function loadRoomTypesIntoSelect() {
 async function getIdRoom(startDate, endDate, idTypeRoom) {
   try {
     const response = await fetch(
-      `https://q4l2x4sw-3000.use2.devtunnels.ms/getAvailableRooms/${startDate}/${endDate}/${idTypeRoom}`,
+      `https://final-proyect-db.onrender.com/getAvailableRooms/${startDate}/${endDate}/${idTypeRoom}`,
       {
         method: "GET",
       }
@@ -313,7 +313,7 @@ form.addEventListener("submit", async (event) => {
   console.log(infoBooking);
   try {
     const result = await fetch(
-      `https://q4l2x4sw-3000.use2.devtunnels.ms/updateBooking/${
+      `https://final-proyect-db.onrender.com/updateBooking/${
         document.getElementById("modificateIdBooking").value
       }`,
       {

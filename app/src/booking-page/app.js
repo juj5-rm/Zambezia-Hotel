@@ -2,7 +2,7 @@
 async function getRoomTypes() {
   try {
     const response = await fetch(
-      "https://q4l2x4sw-3000.use2.devtunnels.ms/getTypeRooms",
+      "https://final-proyect-db.onrender.com/getTypeRooms",
       {
         method: "GET",
       }
@@ -125,7 +125,7 @@ function validationid() {
 async function getIdRoom(startDate, endDate, idTypeRoom) {
   try {
     const response = await fetch(
-      `https://q4l2x4sw-3000.use2.devtunnels.ms/getAvailableRooms/${startDate}/${endDate}/${idTypeRoom}`,
+      `https://final-proyect-db.onrender.com/getAvailableRooms/${startDate}/${endDate}/${idTypeRoom}`,
       {
         method: "GET",
       }
@@ -205,7 +205,7 @@ form.addEventListener("submit", async (event) => {
 
   try {
     const result = await fetch(
-      "https://q4l2x4sw-3000.use2.devtunnels.ms/createBooking ",
+      "https://final-proyect-db.onrender.com/createBooking ",
       {
         method: "POST",
         headers: {

@@ -437,10 +437,10 @@ async function fetchData(url, targetId, entityType) {
 
 async function addRecord(formData, entityType) {
   const urlMap = {
-    bookings: "https://q4l2x4sw-3000.use2.devtunnels.ms/createBooking",
-    rooms: "https://q4l2x4sw-3000.use2.devtunnels.ms/createRoom",
-    typeRooms: "https://q4l2x4sw-3000.use2.devtunnels.ms/createTypeRoom",
-    clients: "https://q4l2x4sw-3000.use2.devtunnels.ms/createUser",
+    bookings: "https://final-proyect-db.onrender.com/createBooking",
+    rooms: "https://final-proyect-db.onrender.com/createRoom",
+    typeRooms: "https://final-proyect-db.onrender.com/createTypeRoom",
+    clients: "https://final-proyect-db.onrender.com/createUser",
   };
   const url = urlMap[entityType];
   try {
@@ -470,10 +470,10 @@ async function addRecord(formData, entityType) {
 // Function to update a record
 async function updateRecord(formData, entityType, id) {
   const urlMap = {
-    bookings: `https://q4l2x4sw-3000.use2.devtunnels.ms/updateBooking/${id}`,
-    rooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/updateRoom/${id}`,
-    typeRooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/updateTypeRoom/${id}`,
-    clients: `https://q4l2x4sw-3000.use2.devtunnels.ms/updateUser/${id}`,
+    bookings: `https://final-proyect-db.onrender.com/updateBooking/${id}`,
+    rooms: `https://final-proyect-db.onrender.com/updateRoom/${id}`,
+    typeRooms: `https://final-proyect-db.onrender.com/updateTypeRoom/${id}`,
+    clients: `https://final-proyect-db.onrender.com/updateUser/${id}`,
   };
   const url = urlMap[entityType];
   try {
@@ -503,10 +503,10 @@ async function updateRecord(formData, entityType, id) {
 // Function to delete a record
 async function deleteRecord(userId, entityType) {
   const urlMap = {
-    bookings: `https://q4l2x4sw-3000.use2.devtunnels.ms/deleteBooking/${userId}`,
-    rooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/deleteRoom/${userId}`,
-    typeRooms: `https://q4l2x4sw-3000.use2.devtunnels.ms/deleteTypeRoom/${userId}`,
-    clients: `https://q4l2x4sw-3000.use2.devtunnels.ms/deleteUser/${userId}`,
+    bookings: `https://final-proyect-db.onrender.com/deleteBooking/${userId}`,
+    rooms: `https://final-proyect-db.onrender.com/deleteRoom/${userId}`,
+    typeRooms: `https://final-proyect-db.onrender.com/deleteTypeRoom/${userId}`,
+    clients: `https://final-proyect-db.onrender.com/deleteUser/${userId}`,
   };
   const url = urlMap[entityType];
   try {
@@ -531,22 +531,22 @@ async function deleteRecord(userId, entityType) {
 
 // Fetch and render data for each section
 fetchData(
-  "https://q4l2x4sw-3000.use2.devtunnels.ms/getBookings",
+  "https://final-proyect-db.onrender.com/getBookings",
   "reservationsList",
   "bookings"
 );
 fetchData(
-  "https://q4l2x4sw-3000.use2.devtunnels.ms/getRooms",
+  "https://final-proyect-db.onrender.com/getRooms",
   "roomsList",
   "rooms"
 );
 fetchData(
-  "https://q4l2x4sw-3000.use2.devtunnels.ms/getTypeRooms",
+  "https://final-proyect-db.onrender.com/getTypeRooms",
   "roomTypesList",
   "typeRooms"
 );
 fetchData(
-  "https://q4l2x4sw-3000.use2.devtunnels.ms/getClients",
+  "https://final-proyect-db.onrender.com/getClients",
   "clientsList",
   "clients"
 );
