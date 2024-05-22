@@ -6,9 +6,10 @@
   },
   "name": "api",
   "version": "1.0.0",
-  "main": "postgreSql.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/postgreSql.js",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
