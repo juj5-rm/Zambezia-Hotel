@@ -6,7 +6,7 @@ main {
   text-align: center;
   width: 100%;
   height: fit-content;
-  padding: 10px;
+  margin: 0;
 }
 
 .tableView {
@@ -159,6 +159,7 @@ form input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .edit-form {
