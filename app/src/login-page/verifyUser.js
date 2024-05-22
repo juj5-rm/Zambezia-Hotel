@@ -2,7 +2,7 @@ import { getUserData, setUserData } from "./userData.js";
 
 const dialog = document.getElementById("dialog");
 const userData = getUserData();
-document.getElementById("logged-in").style.cursor = "pointer";
+document.getElementById("logged-in").style?.cursor = "pointer";
 
 document.getElementById("logged-in").addEventListener("click", async () => {
   try {
