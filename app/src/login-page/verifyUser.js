@@ -37,7 +37,7 @@ if (userData.typeUser === "admin") {
   document.getElementById("deleteUserButton").style.display = "none";
   document.getElementById("adminButton").addEventListener("click", () => {
     window.location.href = "../admin-page/index.html";
-    dialog.style.display = "none";
+    dialog.style?.display = "none";
   });
 }
 
