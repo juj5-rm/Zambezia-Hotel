@@ -41,7 +41,7 @@ function renderTable(data, targetElement, entityType) {
     data.forEach((item) => {
       const row = table.insertRow();
       for (const key in item) {
-        if (key !== "passwordUser") {
+        if (key !== "passwordUser" && key !== "typeUser") {
           const cell = row.insertCell();
           cell.textContent = item[key];
         }
