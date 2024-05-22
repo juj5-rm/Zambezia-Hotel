@@ -14,12 +14,15 @@
 }
 
 .itemCarrusel {
-	height: 400px;
-	width: fit-content;
-	margin: 0 auto 0;
-	position: relative;  
-  align-items: center;
-  justify-content: center;
+  height: 400px;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  display: none;
+}
+
+.itemCarrusel.active {
+  display: block;
 }
 
 .tarjetaCarrusel {
@@ -47,7 +50,7 @@
   padding: 15px;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
-  transition: 0.3 ease;
+  transition: 0.3s ease;
 }
 
 .itemCarrusel > img {

@@ -45,3 +45,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const carousels = document.querySelectorAll(".carrusel");
+
+  carousels.forEach((carrusel) => {
+    const items = carrusel.querySelectorAll(".itemCarrusel");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      items.forEach((item, idx) => {
+        item.classList.toggle("active", idx === index);
+      });
+    }
+
+    function navigateCarousel(e) {
+      e.preventDefault();
+      const targetId = e.target.closest("a").getAttribute("href").slice(1);
+      const targetIndex = [...items].findIndex((item) => item.id === targetId);
+      if (targetIndex !== -1) {
+        currentIndex = targetIndex;
+        showSlide(currentIndex);
+      }
+    }
+
+    carrusel.querySelectorAll(".flechaCarrusel a").forEach((anchor) => {
+      anchor.addEventListener("click", navigateCarousel);
+    });
+
+    showSlide(currentIndex);
+  });
+});
