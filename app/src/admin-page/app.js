@@ -1,3 +1,6 @@
+import { getUserData } from "../login-page/userData.js";
+const userData = getUserData();
+
 function renderTable(data, targetElement, entityType) {
   const containerDiv = document.createElement("div");
   containerDiv.className = "table-container";
@@ -23,10 +26,12 @@ function renderTable(data, targetElement, entityType) {
     containerDiv.appendChild(noDataMessage);
   } else {
     for (const key in data[0]) {
-      const th = document.createElement("th");
-      const spanishKey = translateToSpanish(key);
-      th.textContent = spanishKey;
-      headerRow.appendChild(th);
+      if (key !== "passwordUser") {
+        const th = document.createElement("th");
+        const spanishKey = translateToSpanish(key);
+        th.textContent = spanishKey;
+        headerRow.appendChild(th);
+      }
     }
     const actionsHeader = document.createElement("th");
     actionsHeader.textContent = "Acciones";
@@ -36,8 +41,10 @@ function renderTable(data, targetElement, entityType) {
     data.forEach((item) => {
       const row = table.insertRow();
       for (const key in item) {
-        const cell = row.insertCell();
-        cell.textContent = item[key];
+        if (key !== "passwordUser") {
+          const cell = row.insertCell();
+          cell.textContent = item[key];
+        }
       }
       const actionsCell = row.insertCell();
       const editButton = document.createElement("button");
@@ -99,16 +106,19 @@ async function showEditForm(data, entityType, id) {
   formContainer.appendChild(formTitle);
 
   const formElement = document.createElement("form");
-  // Omitir el campo 'id'
-
+  // Omitir los campos 'id', 'updatedAt', y 'createdAt'
+  console.log(data);
   for (const key in data) {
-    if (key !== getIdFieldName(entityType)) {
-      // Exclude the ID field
+    if (
+      key !== getIdFieldName(entityType) &&
+      key !== "updatedAt" &&
+      key !== "createdAt"
+    ) {
+      // Exclude the ID, updatedAt, and createdAt fields
       const fieldContainer = document.createElement("div");
       fieldContainer.classList.add(
         key.includes("password") ? "password" : "username"
       );
-
       const inputElement = document.createElement("input");
       inputElement.type = "text";
       inputElement.name = key;
@@ -562,3 +572,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function validationid() {
+  if (userData.idUser == "") {
+    window.alert("Por favor, inicie sesión para continuar."); // Muestra un mensaje de alerta
+    window.location.href = "../login-page/index.html"; // Devuelve true si el campo de identificación no está vacío
+  }
+}
+
+window.onload = () => {
+  validationid();
+};
