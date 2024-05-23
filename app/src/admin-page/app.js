@@ -288,17 +288,31 @@ function showAddForm(entityType) {
 
     adressUserFieldContainer.appendChild(adressUserInputElement);
     formElement.appendChild(adressUserFieldContainer);
-
+    // Crear el contenedor del campo del usuario
     const typeUserFieldContainer = document.createElement("div");
     typeUserFieldContainer.classList.add("username");
 
-    const typeUserInputElement = document.createElement("input");
-    typeUserInputElement.type = "text";
+    // Crear el elemento select
+    const typeUserInputElement = document.createElement("select");
     typeUserInputElement.name = "typeUser";
-    typeUserInputElement.placeholder = translateToSpanish("typeUser");
 
+    // Crear y agregar las opciones al elemento select
+    const optionClient = document.createElement("option");
+    optionClient.value = "client";
+    optionClient.text = "client";
+    typeUserInputElement.appendChild(optionClient);
+
+    const optionAdmin = document.createElement("option");
+    optionAdmin.value = "admin";
+    optionAdmin.text = "admin";
+    typeUserInputElement.appendChild(optionAdmin);
+
+    // Añadir el elemento select al contenedor
     typeUserFieldContainer.appendChild(typeUserInputElement);
+
+    // Añadir el contenedor al formulario
     formElement.appendChild(typeUserFieldContainer);
+
     const passwordFieldContainer = document.createElement("div");
     passwordFieldContainer.classList.add("password");
 
