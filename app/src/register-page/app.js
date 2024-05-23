@@ -41,8 +41,6 @@ form.addEventListener("submit", async (event) => {
   infoUser.passwordUser = document.getElementById("passwordUser").value;
   infoUser.typeUser = "client";
 
-  console.log(infoUser);
-
   // Mostrar el loader
   document.getElementById("loader").style.display = "flex";
   document.body.style.overflow = "hidden";

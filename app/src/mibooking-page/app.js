@@ -26,8 +26,6 @@ function formatDate(dateString) {
 
 async function loadBookings() {
   var bookings = await getBooking(userData.idUser);
-  console.log(bookings);
-
   // Seleccionar el cuerpo de la tabla
   var tableBody = document.querySelector("#BookingsView tbody");
   // Eliminar la fila de "noResults" si existe
@@ -305,12 +303,10 @@ form.addEventListener("submit", async (event) => {
   document.getElementById("loader").style.display = "flex";
   document.body.style.overflow = "hidden";
   const infoBooking = new modificateBookingClass();
-  console.log(infoBooking);
   infoBooking.idRoom = parseInt(document.getElementById("idroom").value);
   infoBooking.startDate = document.getElementById("startDateReservation").value;
   infoBooking.endDate = document.getElementById("finishDateReservation").value;
 
-  console.log(infoBooking);
   try {
     const result = await fetch(
       `https://final-proyect-db.onrender.com/updateBooking/${

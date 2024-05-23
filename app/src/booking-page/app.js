@@ -18,7 +18,6 @@ async function getRoomTypes() {
 async function loadRoomTypesIntoSelect() {
   // Get the select element
   var selectRoomType = document.getElementById("typeroom");
-  console.log(selectRoomType);
 
   // Show loader
   document.getElementById("loader").style.display = "flex";
@@ -197,7 +196,6 @@ form.addEventListener("submit", async (event) => {
   infoBooking.startDate = document.getElementById("startDateReservation").value;
   infoBooking.endDate = document.getElementById("finishDateReservation").value;
 
-  console.log(infoBooking);
 
   // Show loader
   document.getElementById("loader").style.display = "flex";

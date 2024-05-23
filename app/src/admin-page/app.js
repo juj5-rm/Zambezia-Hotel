@@ -107,7 +107,6 @@ async function showEditForm(data, entityType, id) {
 
   const formElement = document.createElement("form");
   // Omitir los campos 'id', 'updatedAt', y 'createdAt'
-  console.log(data);
   for (const key in data) {
     if (
       key !== getIdFieldName(entityType) &&
@@ -574,7 +573,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validationid() {
-  if (userData.idUser == "") {
+  if (userData.idUser == "" || userData.typeUser != "admin") {
     window.alert("Por favor, inicie sesión para continuar."); // Muestra un mensaje de alerta
     window.location.href = "../login-page/index.html"; // Devuelve true si el campo de identificación no está vacío
   }
