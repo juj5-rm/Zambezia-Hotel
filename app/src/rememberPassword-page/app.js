@@ -71,3 +71,12 @@ function checkPasswordMatch() {
     return true;
   }
 }
+
+const emailField = document.getElementById("email");
+
+function toLowerCase() {
+  emailField.value = emailField.value.toLowerCase();
+}
+
+emailField.addEventListener("input", toLowerCase);
+emailField.addEventListener("blur", toLowerCase);

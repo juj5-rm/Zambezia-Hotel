@@ -85,3 +85,12 @@ function checkPasswordMatch() {
     return true; // Permitir envío del formulario
   }
 }
+
+const emailField = document.getElementById("emailUser");
+
+function toLowerCase() {
+  emailField.value = emailField.value.toLowerCase();
+}
+
+emailField.addEventListener("input", toLowerCase);
+emailField.addEventListener("blur", toLowerCase);

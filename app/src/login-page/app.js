@@ -57,3 +57,13 @@ loginForm.addEventListener("submit", async (event) => {
     document.body.style.overflow = "auto";
   }
 });
+
+
+const emailField = document.getElementById("email");
+
+function toLowerCase() {
+  emailField.value = emailField.value.toLowerCase();
+}
+
+emailField.addEventListener("input", toLowerCase);
+emailField.addEventListener("blur", toLowerCase);
