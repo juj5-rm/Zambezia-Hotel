@@ -26,7 +26,7 @@ function renderTable(data, targetElement, entityType) {
     containerDiv.appendChild(noDataMessage);
   } else {
     for (const key in data[0]) {
-      if (key !== "passwordUser" && key !== "typeUser") {
+      if (key !== "passwordUser") {
         const th = document.createElement("th");
         const spanishKey = translateToSpanish(key);
         th.textContent = spanishKey;
@@ -41,7 +41,7 @@ function renderTable(data, targetElement, entityType) {
     data.forEach((item) => {
       const row = table.insertRow();
       for (const key in item) {
-        if (key !== "passwordUser" && key !== "typeUser") {
+        if (key !== "passwordUser") {
           const cell = row.insertCell();
           cell.textContent = item[key];
         }
@@ -60,23 +60,39 @@ function renderTable(data, targetElement, entityType) {
       actionsCell.appendChild(editButton);
       actionsCell.appendChild(document.createElement("br"));
 
-      const deleteButton = document.createElement("button");
-      deleteButton.title = "Eliminar";
-      deleteButton.classList.add("delete-Button");
-      deleteButton.onclick = async () => {
-        const entityId = getIdForEntityType(entityType, item); // Se obtiene el ID según la entidad
-        try {
-          await deleteRecord(entityId, entityType);
-        } catch (error) {
-          console.error("Error al eliminar el registro:", error);
-        }
-      };
+      // Change delete button behavior for rooms
+      if (entityType === "rooms") {
+        const deleteButton = document.createElement("button");
+        deleteButton.title = "Eliminar";
+        deleteButton.classList.add("delete-Button");
+        deleteButton.onclick = function () {
+          showEditForm(item, entityType, getIdForEntityType(entityType, item)); // Abre el formulario de edición en lugar de eliminar
+        };
 
-      var iconCancelar = document.createElement("i");
-      iconCancelar.className = "fa-solid fa-trash-can";
-      deleteButton.appendChild(iconCancelar);
-      actionsCell.appendChild(deleteButton);
-      actionsCell.appendChild(document.createElement("br"));
+        var iconCancelar = document.createElement("i");
+        iconCancelar.className = "fa-solid fa-trash-can";
+        deleteButton.appendChild(iconCancelar);
+        actionsCell.appendChild(deleteButton);
+        actionsCell.appendChild(document.createElement("br"));
+      } else {
+        const deleteButton = document.createElement("button");
+        deleteButton.title = "Eliminar";
+        deleteButton.classList.add("delete-Button");
+        deleteButton.onclick = async () => {
+          const entityId = getIdForEntityType(entityType, item); // Se obtiene el ID según la entidad
+          try {
+            await deleteRecord(entityId, entityType);
+          } catch (error) {
+            console.error("Error al eliminar el registro:", error);
+          }
+        };
+
+        var iconCancelar = document.createElement("i");
+        iconCancelar.className = "fa-solid fa-trash-can";
+        deleteButton.appendChild(iconCancelar);
+        actionsCell.appendChild(deleteButton);
+        actionsCell.appendChild(document.createElement("br"));
+      }
     });
   }
 
