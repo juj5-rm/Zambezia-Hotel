@@ -121,22 +121,26 @@
                   name="nombre"
                   placeholder="Ingresa tu nombre"
                   class="campo"
+                  id="nameUser"
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="Ingresa tu email"
                   class="campo"
+                  id="emailUser"
                 />
                 <textarea
                   name="mensaje"
                   placeholder="Ingresa tu mensaje"
+                  id="messageUser"
                 ></textarea>
                 <input
                   type="submit"
                   name="Enviar"
                   value="Enviar mensaje"
                   class="btn-enviar"
+                  id="buttonMessage"
                 />
               </form>
             </div>
@@ -167,7 +171,7 @@
         </div>
       </div>
       <!--loader-->
-      <div class="loaderDiv" id="loader" style="display: none">
+      <div class="loaderDiv" id="loader">
         <span class="loader"></span>
       </div>
       <footer id="footer" class="Footer">
@@ -224,6 +228,7 @@
           </div>
         </div>
       </footer>
+      <script src="./app.js"></script>
       <script type="module" src="../login-page/verifyUser.js"></script>
     </div>
   </body>
