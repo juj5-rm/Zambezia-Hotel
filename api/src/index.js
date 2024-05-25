@@ -1,9 +1,11 @@
 import express from "express";
 import cors from "cors";
 import { pool } from "../dataBase/connectionPostgreSql.js";
+import { Resend } from "resend";
 
 const app = express();
 const PORT = 3000;
+const resend = new Resend("re_dSHD1cVX_JoPkFrdDMpsXa3ZVQWqMzH6Y");
 
 app.use(express.json());
 app.use(cors());
@@ -704,6 +706,28 @@ app.put("/maintenanceRoom/:idRoom/:startDate/:endDate", async (req, res) => {
     );
     res.status(500).json({ error: "Internal Server Error" });
     logRecent(req.method, req.url, false, "Internal Server Error");
+  }
+});
+
+//Consumo de api para mandar correos
+app.post("/sendEmail", async (req, res) => {
+  const { user, email, message } = req.body;
+  try {
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "hotelzambezia@gmail.com",
+      subject: `${user} - ${email}`,
+      html: message,
+    });
+    // Respuesta exitosa
+    logRecent(req.method, req.url);
+    res.status(200).json({ message: "Correo electrónico enviado con éxito" });
+  } catch (error) {
+    // Manejo de errores
+    logRecent(req.method, req.url, false, "Error sending email");
+    res
+      .status(500)
+      .json({ error: "Se produjo un error al enviar el correo electrónico" });
   }
 });
 
